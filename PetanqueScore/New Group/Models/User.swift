@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: NSObject {
+class User: NSObject, NSCoding {
     var firstname: String?
     
     var lastname: String?
@@ -31,15 +31,15 @@ class User: NSObject {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(firstname, forKey: PropertyKey.firstname)
-        aCoder.encode(lastname, forKey: PropertyKey.lastname)
-        aCoder.encode(imageUrl, forKey: PropertyKey.imageurl)
+        aCoder.encode(self.firstname, forKey: PropertyKey.firstname)
+        aCoder.encode(self.lastname, forKey: PropertyKey.lastname)
+        aCoder.encode(self.imageUrl?.path, forKey: PropertyKey.imageurl)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let firstname = aDecoder.decodeObject(forKey: "Cfirstname") as? String
-        let lastname = aDecoder.decodeObject(forKey: "Clastname") as? String
-        let imageurl = aDecoder.decodeObject(forKey: "Cimageurl") as? String
+        let firstname = aDecoder.decodeObject(forKey: PropertyKey.firstname) as? String
+        let lastname = aDecoder.decodeObject(forKey: PropertyKey.lastname) as? String
+        let imageurl = aDecoder.decodeObject(forKey: PropertyKey.imageurl) as? String
         let url = NSURL(fileURLWithPath: imageurl!)
         self.init(first: firstname!, last: lastname!, url: url)
     }

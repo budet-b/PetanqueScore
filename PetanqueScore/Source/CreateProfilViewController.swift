@@ -44,20 +44,27 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
         {
             confirmButton.isEnabled = false
         }
-        var url = NSURL(fileURLWithPath: imagePath)
-        var user = User(first: prenomTextField.text!, last: nomTextField.text!, url: url)
+        let url = NSURL(fileURLWithPath: imagePath)
+        let user = User(first: prenomTextField.text!, last: nomTextField.text!, url: url)
         print(imagePath)
-        var curr = UserDefaults.standard.array(forKey: "users")
-        curr?.append(user)
-        UserDefaults.standard.set(curr, forKey: "users")
-        print(UserDefaults.standard.array(forKey: "users"))
+        // True if success
+        let saved = NSCodingData().Save(profile: user)
+        if saved {
+            self.dismiss(animated: true, completion: nil)
+        }
+        else {
+            let alert = UIAlertController(title: "Erreur dans la création de profil", message: "Impossible de sauvegarder le profil.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Réessayer", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Tant pis", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let fileManager = FileManager.default
         let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-        var imagePathUrl = documentsPath?.appendingPathComponent("image.jpg")
-        imagePath = (imagePathUrl?.absoluteString)!
+        let imagePathUrl = documentsPath?.appendingPathComponent("image.jpg")
+        imagePath = (imagePathUrl?.path)!
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             try! UIImageJPEGRepresentation(pickedImage, 0.0)?.write(to: imagePathUrl!)
             imageView.image = pickedImage

@@ -9,14 +9,9 @@
 import Foundation
 
 class NSCodingData {
-    public func SaveProfils(profils: [User]) {
-        let urlString = User.ArchiveURL.absoluteString
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(profils, toFile: urlString)
-        if isSuccessfulSave {
-            print("Success")
-        } else {
-            print("Error for save")
-        }
+    public func Save(profile: User) -> Bool {
+        let urlString = User.ArchiveURL.path
+        return NSKeyedArchiver.archiveRootObject(profile, toFile: urlString)
     }
     
     public func GetProfils() -> [User]? {
