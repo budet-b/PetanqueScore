@@ -12,6 +12,10 @@
 		CB14AA05207F862B00834626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA03207F862B00834626 /* Main.storyboard */; };
 		CB14AA07207F862D00834626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA06207F862D00834626 /* Assets.xcassets */; };
 		CB14AA0A207F862D00834626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA08207F862D00834626 /* LaunchScreen.storyboard */; };
+		CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA11207FB91A00834626 /* GameViewController.swift */; };
+		CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41622020809EA8005A7773 /* NewGameViewController.swift */; };
+		CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */; };
+		CB8C132120856F8E00E28C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132020856F8E00E28C2B /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		CB14AA06207F862D00834626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB14AA09207F862D00834626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB14AA0B207F862D00834626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB14AA11207FB91A00834626 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CB41622020809EA8005A7773 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = PetanqueScore/Source/NewGameViewController.swift; sourceTree = SOURCE_ROOT; };
+		CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfilViewController.swift; path = PetanqueScore/Source/CreateProfilViewController.swift; sourceTree = SOURCE_ROOT; };
+		CB8C132020856F8E00E28C2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		CB14A9FE207F862B00834626 /* PetanqueScore */ = {
 			isa = PBXGroup;
 			children = (
+				CB14AA13207FB92A00834626 /* Source */,
 				CB14A9FF207F862B00834626 /* AppDelegate.swift */,
 				CB14AA01207F862B00834626 /* ViewController.swift */,
 				CB14AA03207F862B00834626 /* Main.storyboard */,
@@ -62,6 +71,26 @@
 				CB14AA0B207F862D00834626 /* Info.plist */,
 			);
 			path = PetanqueScore;
+			sourceTree = "<group>";
+		};
+		CB14AA13207FB92A00834626 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CB8C131F20856F8000E28C2B /* Models */,
+				CB14AA11207FB91A00834626 /* GameViewController.swift */,
+				CB41622020809EA8005A7773 /* NewGameViewController.swift */,
+				CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */,
+			);
+			name = Source;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CB8C131F20856F8000E28C2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB8C132020856F8E00E28C2B /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
+				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
+				CB8C132120856F8E00E28C2B /* User.swift in Sources */,
+				CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */,
+				CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */,
 				CB14AA00207F862B00834626 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
