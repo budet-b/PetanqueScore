@@ -16,6 +16,7 @@
 		CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41622020809EA8005A7773 /* NewGameViewController.swift */; };
 		CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */; };
 		CB8C132120856F8E00E28C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132020856F8E00E28C2B /* User.swift */; };
+		CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C13232085F9EA00E28C2B /* NSCodingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CB41622020809EA8005A7773 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = PetanqueScore/Source/NewGameViewController.swift; sourceTree = SOURCE_ROOT; };
 		CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfilViewController.swift; path = PetanqueScore/Source/CreateProfilViewController.swift; sourceTree = SOURCE_ROOT; };
 		CB8C132020856F8E00E28C2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB8C13232085F9EA00E28C2B /* NSCodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		CB14AA13207FB92A00834626 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CB8C13222085F9D100E28C2B /* DataAccess */,
 				CB8C131F20856F8000E28C2B /* Models */,
 				CB14AA11207FB91A00834626 /* GameViewController.swift */,
 				CB41622020809EA8005A7773 /* NewGameViewController.swift */,
@@ -91,6 +94,14 @@
 				CB8C132020856F8E00E28C2B /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CB8C13222085F9D100E28C2B /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				CB8C13232085F9EA00E28C2B /* NSCodingData.swift */,
+			);
+			path = DataAccess;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			files = (
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
 				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
+				CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */,
 				CB8C132120856F8E00E28C2B /* User.swift in Sources */,
 				CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */,
 				CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */,
