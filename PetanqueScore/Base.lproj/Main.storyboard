@@ -42,11 +42,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bez-RK-E7w">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bez-RK-E7w">
                                 <rect key="frame" x="67" y="369" width="240" height="215"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QZ-dA-atI">
-                                <rect key="frame" x="153" y="668" width="69" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QZ-dA-atI">
+                                <rect key="frame" x="153" y="756" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Confirmer"/>
                                 <connections>
                                     <action selector="confirmButton:" destination="ITf-2t-Nf1" eventType="touchUpInside" id="TST-x0-LS6"/>
@@ -59,14 +60,16 @@
                                     <action selector="addImagePicker:" destination="ITf-2t-Nf1" eventType="touchUpInside" id="TRS-e7-Whm"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pw8-y8-ol8">
+                                <rect key="frame" x="0.0" y="586" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4QZ-dA-atI" firstAttribute="top" secondItem="Bez-RK-E7w" secondAttribute="bottom" constant="84" id="0au-b8-tSG"/>
                             <constraint firstItem="Bez-RK-E7w" firstAttribute="top" secondItem="f08-z5-jkT" secondAttribute="bottom" constant="8" id="3hy-A4-3Er"/>
                             <constraint firstItem="dSH-ii-cKW" firstAttribute="top" secondItem="H7O-pA-Dzd" secondAttribute="bottom" constant="23" id="4dV-KM-acF"/>
                             <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="mec-el-rk1" secondAttribute="trailing" constant="299" id="6Bu-71-y4W"/>
-                            <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="4QZ-dA-atI" secondAttribute="trailing" constant="153" id="Azm-rJ-tcR"/>
                             <constraint firstItem="vLl-N0-gWv" firstAttribute="top" secondItem="dSH-ii-cKW" secondAttribute="bottom" constant="8" id="CvY-rX-fty"/>
                             <constraint firstItem="dSH-ii-cKW" firstAttribute="leading" secondItem="8Uj-sN-MJZ" secondAttribute="leading" constant="16" id="E7N-a0-Smm"/>
                             <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="H7O-pA-Dzd" secondAttribute="trailing" constant="16" id="Ipb-4v-8FG"/>
@@ -76,16 +79,13 @@
                             <constraint firstItem="H7O-pA-Dzd" firstAttribute="leading" secondItem="8Uj-sN-MJZ" secondAttribute="leading" constant="16" id="MFu-Sb-Teo"/>
                             <constraint firstItem="vLl-N0-gWv" firstAttribute="leading" secondItem="8Uj-sN-MJZ" secondAttribute="leading" constant="16" id="Oy1-28-ouw"/>
                             <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="dSH-ii-cKW" secondAttribute="trailing" constant="322" id="S2T-Kz-VjQ"/>
-                            <constraint firstItem="4QZ-dA-atI" firstAttribute="top" secondItem="Bez-RK-E7w" secondAttribute="bottom" constant="84" id="Tvn-9m-jvA"/>
                             <constraint firstItem="mec-el-rk1" firstAttribute="top" secondItem="8Uj-sN-MJZ" secondAttribute="top" constant="21" id="VhP-2F-Bbu"/>
                             <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="vLl-N0-gWv" secondAttribute="trailing" constant="16" id="aC9-Ht-jiX"/>
                             <constraint firstItem="f08-z5-jkT" firstAttribute="leading" secondItem="8Uj-sN-MJZ" secondAttribute="leading" constant="125" id="cuV-hy-yLd"/>
-                            <constraint firstItem="4QZ-dA-atI" firstAttribute="leading" secondItem="8Uj-sN-MJZ" secondAttribute="leading" constant="153" id="fuH-1d-3Pw"/>
                             <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="f08-z5-jkT" secondAttribute="trailing" constant="125" id="gk4-bO-Uc2"/>
                             <constraint firstItem="f08-z5-jkT" firstAttribute="top" secondItem="vLl-N0-gWv" secondAttribute="bottom" constant="29" id="h33-RS-lh5"/>
                             <constraint firstItem="mec-el-rk1" firstAttribute="leading" secondItem="8Uj-sN-MJZ" secondAttribute="leading" constant="16" id="k0K-Tt-5Qj"/>
                             <constraint firstItem="8Uj-sN-MJZ" firstAttribute="trailing" secondItem="Bez-RK-E7w" secondAttribute="trailing" constant="68" id="lq5-Nu-p6D"/>
-                            <constraint firstItem="8Uj-sN-MJZ" firstAttribute="bottom" secondItem="4QZ-dA-atI" secondAttribute="bottom" constant="80" id="mcj-16-UGs"/>
                             <constraint firstItem="vLl-N0-gWv" firstAttribute="top" secondItem="dSH-ii-cKW" secondAttribute="bottom" constant="8" id="r8C-A4-big"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Uj-sN-MJZ"/>
