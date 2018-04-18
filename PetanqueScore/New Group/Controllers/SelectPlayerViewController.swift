@@ -8,25 +8,20 @@
 
 import UIKit
 
-class SelectPlayerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-    @IBOutlet weak var usersCollectionView: UICollectionView!
+class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableViewPlayers: UITableView!
     var data: [User] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()!
-        print(data)
-        usersCollectionView.delegate = self
-        usersCollectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -37,28 +32,34 @@ class SelectPlayerViewController: UIViewController, UICollectionViewDataSource, 
     }
     */
     
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "select", for: indexPath) as! SelectPlayerCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableV", for: indexPath) as! SelectPlayerTableViewCell
+        cell.userName.text = data[indexPath.row].firstname
+        cell.userVic.text = "12 victoires"
+        cell.userPercent.text = "30%"
         let img = ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
         if (img != nil) {
-            print(data[indexPath.row].imageUrl?.path as! String)
             cell.userImg.image = img
             cell.userImg.layer.masksToBounds = true
             cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
             cell.userImg.clipsToBounds = true
         } else {
             cell.userImg.image = UIImage(named: "profilPlaceholder")
+            cell.userImg.layer.masksToBounds = true
+            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
+            cell.userImg.clipsToBounds = true
         }
-        
-        cell.userName.text = data[indexPath.row].firstname
-        cell.userPercent.text = "0"
-        cell.nbVict.text = "12 Victoires"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableV", for: indexPath) as! SelectPlayerTableViewCell
+        cell.accessoryType = .none
+        cell.backgroundColor = UIColor.white
     }
 
 }

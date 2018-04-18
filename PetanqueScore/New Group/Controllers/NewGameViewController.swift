@@ -12,18 +12,7 @@ class NewGameViewController: UIViewController {
     // TextFields
     @IBOutlet weak var Equipe2TextField: UITextField!
     @IBOutlet weak var Equipe1TextField: UITextField!
-    
-    // Pickers Equipe 1
-    
-    @IBOutlet weak var picker1_1: UIPickerView!
-    @IBOutlet weak var picker1_2: UIPickerView!
-    @IBOutlet weak var picker1_3: UIPickerView!
-    // Pickers Equipe 2
-    
-    @IBOutlet weak var picker2_1: UIPickerView!
-    @IBOutlet weak var picker2_2: UIPickerView!
-    @IBOutlet weak var picker2_3: UIPickerView!
-    
+   
     var data: [User]?
     
     @IBAction func CreateGame(_ sender: Any) {
@@ -31,23 +20,6 @@ class NewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()
-        picker1_1.delegate = self
-        picker1_1.dataSource = self
-        
-        picker1_2.delegate = self
-        picker1_2.dataSource = self
-        
-        picker1_3.delegate = self
-        picker1_3.dataSource = self
-        
-        picker2_1.delegate = self
-        picker2_1.dataSource = self
-        
-        picker2_2.delegate = self
-        picker2_2.dataSource = self
-        
-        picker2_3.delegate = self
-        picker2_3.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -80,19 +52,5 @@ extension NewGameViewController: UITextFieldDelegate {
             Equipe1TextField.resignFirstResponder()
         }
         return true
-    }
-}
-
-extension NewGameViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (data?.count)!
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data![row].firstname
     }
 }
