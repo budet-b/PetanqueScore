@@ -20,6 +20,9 @@
 		CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132620867CA400E28C2B /* DashboardViewController.swift */; };
 		CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132D2087542B00E28C2B /* SettingsViewController.swift */; };
 		CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */; };
+		CBD9194E208799060059A2C7 /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9194D208799060059A2C7 /* SelectPlayerViewController.swift */; };
+		CBD9195220879A060059A2C7 /* SelectPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9195120879A060059A2C7 /* SelectPlayerCollectionViewCell.swift */; };
+		CBD9195520879E3A0059A2C7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9195420879E3A0059A2C7 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		CB8C132620867CA400E28C2B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		CB8C132D2087542B00E28C2B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilsTVC.swift; sourceTree = "<group>"; };
+		CBD9194D208799060059A2C7 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
+		CBD9195120879A060059A2C7 /* SelectPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBD9195420879E3A0059A2C7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 		CB14AA13207FB92A00834626 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CBD9195320879E2F0059A2C7 /* Utils */,
+				CBD9194F208799980059A2C7 /* Layout */,
 				CB8C132820867D0A00E28C2B /* Dashboard */,
 				CB8C132520867C4F00E28C2B /* Controllers */,
 				CB8C13222085F9D100E28C2B /* DataAccess */,
@@ -117,6 +125,7 @@
 				CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */,
 				CB8C132D2087542B00E28C2B /* SettingsViewController.swift */,
 				CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */,
+				CBD9194D208799060059A2C7 /* SelectPlayerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +152,30 @@
 			children = (
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		CBD9194F208799980059A2C7 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				CBD91950208799F20059A2C7 /* Cell */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		CBD91950208799F20059A2C7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CBD9195120879A060059A2C7 /* SelectPlayerCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CBD9195320879E2F0059A2C7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CBD9195420879E3A0059A2C7 /* Images.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +252,14 @@
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
 				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
 				CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */,
+				CBD9195220879A060059A2C7 /* SelectPlayerCollectionViewCell.swift in Sources */,
+				CBD9195520879E3A0059A2C7 /* Images.swift in Sources */,
 				CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */,
 				CB8C132120856F8E00E28C2B /* User.swift in Sources */,
 				CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */,
 				CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */,
 				CB14AA00207F862B00834626 /* AppDelegate.swift in Sources */,
+				CBD9194E208799060059A2C7 /* SelectPlayerViewController.swift in Sources */,
 				CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */,
 				CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */,
 			);

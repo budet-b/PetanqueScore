@@ -13,6 +13,7 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var prenomTextField: UITextField!
     let imagePicker = UIImagePickerController()
     var imagePath = ""
+    var numberUser = NSCodingData.GetProfils()?.count
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nomTextField: UITextField!
     override func viewDidLoad() {
@@ -74,7 +75,8 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let fileManager = FileManager.default
         let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-        let imagePathUrl = documentsPath?.appendingPathComponent("image.jpg")
+        
+        let imagePathUrl = documentsPath?.appendingPathComponent("image\(String(describing: numberUser!)).jpg")
         imagePath = (imagePathUrl?.path)!
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             try! UIImageJPEGRepresentation(pickedImage, 0.0)?.write(to: imagePathUrl!)

@@ -53,5 +53,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 1:
+            _ = NSCodingData.Save(profiles: [])
+        default:
+            break
+        }
+    }
 }
 
