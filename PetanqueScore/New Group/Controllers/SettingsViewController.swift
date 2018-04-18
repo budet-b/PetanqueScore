@@ -57,7 +57,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 1:
+            ImageLoad.removeImage()
             _ = NSCodingData.Save(profiles: [])
+            let alert = UIAlertController(title: "Données Supprimés", message: "", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+            self.present(alert, animated: true)
         default:
             break
         }

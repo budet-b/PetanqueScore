@@ -45,17 +45,19 @@ class SelectPlayerViewController: UIViewController, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "select", for: indexPath) as! SelectPlayerCollectionViewCell
         let img = ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
-        
         if (img != nil) {
             print(data[indexPath.row].imageUrl?.path as! String)
             cell.userImg.image = img
+            cell.userImg.layer.masksToBounds = true
+            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
+            cell.userImg.clipsToBounds = true
         } else {
-            cell.userImg.image = UIImage(named: "placeholder")
+            cell.userImg.image = UIImage(named: "profilPlaceholder")
         }
         
         cell.userName.text = data[indexPath.row].firstname
         cell.userPercent.text = "0"
-        
+        cell.nbVict.text = "12 Victoires"
         return cell
     }
 

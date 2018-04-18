@@ -81,6 +81,9 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             try! UIImageJPEGRepresentation(pickedImage, 0.0)?.write(to: imagePathUrl!)
             imageView.image = pickedImage
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = imageView.frame.size.width / 2
+            imageView.clipsToBounds = true
         }
         self.dismiss(animated: true, completion: nil)
     }

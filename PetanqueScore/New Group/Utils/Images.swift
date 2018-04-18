@@ -20,5 +20,18 @@ class ImageLoad {
         }
         return nil
     }
+    
+    public static func removeImage() {
+        let fileManager = FileManager.default
+        let tempFolderPath = NSTemporaryDirectory()
+        do {
+            let filePaths = try fileManager.contentsOfDirectory(atPath: tempFolderPath)
+            for filePath in filePaths {
+                try fileManager.removeItem(atPath: tempFolderPath + filePath)
+            }
+        } catch {
+            print("Could not clear temp folder: \(error)")
+        }
+    }
 }
 

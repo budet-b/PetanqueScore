@@ -13,4 +13,5 @@ class SelectPlayerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPercent: UILabel!
+    @IBOutlet weak var nbVict: UILabel!
 }
