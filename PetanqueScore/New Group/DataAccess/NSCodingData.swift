@@ -9,13 +9,11 @@
 import Foundation
 
 class NSCodingData {
-    public func Save(profile: User) -> Bool {
-        let urlString = User.ArchiveURL.path
-        return NSKeyedArchiver.archiveRootObject(profile, toFile: urlString)
+    static public func Save(profiles: [User]) -> Bool {
+        return NSKeyedArchiver.archiveRootObject(profiles, toFile: User.ArchiveURL.path)
     }
     
-    public func GetProfils() -> [User]? {
-        let urlString = User.ArchiveURL.absoluteString
-        return NSKeyedUnarchiver.unarchiveObject(withFile: urlString) as? [User]
+    static public func GetProfils() -> [User]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: User.ArchiveURL.path) as? [User]
     }
 }

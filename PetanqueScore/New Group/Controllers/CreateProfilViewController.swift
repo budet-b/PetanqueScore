@@ -47,10 +47,21 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
         let url = NSURL(fileURLWithPath: imagePath)
         let user = User(first: prenomTextField.text!, last: nomTextField.text!, url: url)
         print(imagePath)
-        // True if success
-        let saved = NSCodingData().Save(profile: user)
+        // On get l'ensemble des profils
+        var curr = NSCodingData.GetProfils()
+        curr = curr == nil ? [] : curr
+        // On ajoute notre profil
+        curr?.append(user)
+        // On ré-enregistre l'ensemble des profils
+        let saved = NSCodingData.Save(profiles: curr!)
         if saved {
-            self.dismiss(animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateInitialViewController()
+            self.present(controller!, animated: true, completion: nil)
+            if ((curr) != nil)
+            {
+                print(curr)
+            }
         }
         else {
             let alert = UIAlertController(title: "Erreur dans la création de profil", message: "Impossible de sauvegarder le profil.", preferredStyle: .alert)

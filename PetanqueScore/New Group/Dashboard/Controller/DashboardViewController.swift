@@ -1,20 +1,15 @@
 //
-//  NewGameViewController.swift
+//  DashboardViewController.swift
 //  PetanqueScore
 //
-//  Created by Benjamin_Budet on 13/04/2018.
+//  Created by Benjamin_Budet on 17/04/2018.
 //  Copyright © 2018 Benjamin Budet. All rights reserved.
 //
 
 import UIKit
 
-class NewGameViewController: UIViewController {
-    @IBOutlet weak var Equipe2TextField: UITextField!
-    @IBOutlet weak var Equipe1TextField: UITextField!
-    
-    @IBAction func CreateGame(_ sender: Any) {
-        
-    }
+class DashboardViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,16 +34,6 @@ class NewGameViewController: UIViewController {
 
 }
 
-extension NewGameViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == Equipe1TextField
-        {
-            Equipe2TextField.becomeFirstResponder()
-        }
-        if textField == Equipe2TextField
-        {
-            Equipe1TextField.resignFirstResponder()
-        }
-        return true
-    }
+extension DashboardViewController: UITableViewDelegate {
+    
 }

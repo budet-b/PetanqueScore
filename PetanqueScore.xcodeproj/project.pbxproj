@@ -17,6 +17,9 @@
 		CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */; };
 		CB8C132120856F8E00E28C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132020856F8E00E28C2B /* User.swift */; };
 		CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C13232085F9EA00E28C2B /* NSCodingData.swift */; };
+		CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132620867CA400E28C2B /* DashboardViewController.swift */; };
+		CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132D2087542B00E28C2B /* SettingsViewController.swift */; };
+		CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +31,13 @@
 		CB14AA09207F862D00834626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB14AA0B207F862D00834626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB14AA11207FB91A00834626 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		CB41622020809EA8005A7773 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = PetanqueScore/Source/NewGameViewController.swift; sourceTree = SOURCE_ROOT; };
-		CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfilViewController.swift; path = PetanqueScore/Source/CreateProfilViewController.swift; sourceTree = SOURCE_ROOT; };
+		CB41622020809EA8005A7773 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = "PetanqueScore/New Group/Controllers/NewGameViewController.swift"; sourceTree = SOURCE_ROOT; };
+		CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfilViewController.swift; path = "PetanqueScore/New Group/Controllers/CreateProfilViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CB8C132020856F8E00E28C2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB8C13232085F9EA00E28C2B /* NSCodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodingData.swift; sourceTree = "<group>"; };
+		CB8C132620867CA400E28C2B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		CB8C132D2087542B00E28C2B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilsTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +84,10 @@
 		CB14AA13207FB92A00834626 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CB8C132820867D0A00E28C2B /* Dashboard */,
+				CB8C132520867C4F00E28C2B /* Controllers */,
 				CB8C13222085F9D100E28C2B /* DataAccess */,
 				CB8C131F20856F8000E28C2B /* Models */,
-				CB14AA11207FB91A00834626 /* GameViewController.swift */,
-				CB41622020809EA8005A7773 /* NewGameViewController.swift */,
-				CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */,
 			);
 			name = Source;
 			path = "New Group";
@@ -102,6 +107,42 @@
 				CB8C13232085F9EA00E28C2B /* NSCodingData.swift */,
 			);
 			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		CB8C132520867C4F00E28C2B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB14AA11207FB91A00834626 /* GameViewController.swift */,
+				CB41622020809EA8005A7773 /* NewGameViewController.swift */,
+				CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */,
+				CB8C132D2087542B00E28C2B /* SettingsViewController.swift */,
+				CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB8C132820867D0A00E28C2B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB8C132A20867D2700E28C2B /* TableView */,
+				CB8C132920867D1500E28C2B /* Controller */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		CB8C132920867D1500E28C2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB8C132620867CA400E28C2B /* DashboardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB8C132A20867D2700E28C2B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,10 +219,13 @@
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
 				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
 				CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */,
+				CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */,
 				CB8C132120856F8E00E28C2B /* User.swift in Sources */,
 				CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */,
 				CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */,
 				CB14AA00207F862B00834626 /* AppDelegate.swift in Sources */,
+				CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */,
+				CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
