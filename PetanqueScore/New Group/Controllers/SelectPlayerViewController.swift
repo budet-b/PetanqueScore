@@ -44,15 +44,12 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
         let img = ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
         if (img != nil) {
             cell.userImg.image = img
-            cell.userImg.layer.masksToBounds = true
-            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
-            cell.userImg.clipsToBounds = true
         } else {
             cell.userImg.image = UIImage(named: "profilPlaceholder")
-            cell.userImg.layer.masksToBounds = true
-            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
-            cell.userImg.clipsToBounds = true
         }
+        cell.userImg.layer.masksToBounds = true
+        cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
+        cell.userImg.clipsToBounds = true
         return cell
     }
     
@@ -61,5 +58,4 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
         cell.accessoryType = .none
         cell.backgroundColor = UIColor.white
     }
-
 }

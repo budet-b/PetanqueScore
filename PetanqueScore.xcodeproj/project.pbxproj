@@ -15,6 +15,7 @@
 		CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA11207FB91A00834626 /* GameViewController.swift */; };
 		CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41622020809EA8005A7773 /* NewGameViewController.swift */; };
 		CB6820572087E2C600CB6CDA /* SelectPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6820562087E2C600CB6CDA /* SelectPlayerTableViewCell.swift */; };
+		CB6820592087FFA200CB6CDA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */; };
 		CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */; };
 		CB8C132120856F8E00E28C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132020856F8E00E28C2B /* User.swift */; };
 		CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C13232085F9EA00E28C2B /* NSCodingData.swift */; };
@@ -37,6 +38,7 @@
 		CB14AA11207FB91A00834626 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		CB41622020809EA8005A7773 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = "PetanqueScore/New Group/Controllers/NewGameViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CB6820562087E2C600CB6CDA /* SelectPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CB8C131D20856B6900E28C2B /* CreateProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfilViewController.swift; path = "PetanqueScore/New Group/Controllers/CreateProfilViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CB8C132020856F8E00E28C2B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB8C13232085F9EA00E28C2B /* NSCodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodingData.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				CBD9195120879A060059A2C7 /* SelectPlayerCollectionViewCell.swift */,
 				CB6820562087E2C600CB6CDA /* SelectPlayerTableViewCell.swift */,
+				CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
 				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
 				CB6820572087E2C600CB6CDA /* SelectPlayerTableViewCell.swift in Sources */,
+				CB6820592087FFA200CB6CDA /* ProfileTableViewCell.swift in Sources */,
 				CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */,
 				CBD9195220879A060059A2C7 /* SelectPlayerCollectionViewCell.swift in Sources */,
 				CBD9195520879E3A0059A2C7 /* Images.swift in Sources */,
