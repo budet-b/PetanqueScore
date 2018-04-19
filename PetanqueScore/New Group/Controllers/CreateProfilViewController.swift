@@ -56,13 +56,7 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
         // On ré-enregistre l'ensemble des profils
         let saved = NSCodingData.Save(profiles: curr!)
         if saved {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateInitialViewController()
-            self.present(controller!, animated: true, completion: nil)
-            if ((curr) != nil)
-            {
-                print(curr)
-            }
+            navigationController?.popViewController(animated: true)
         }
         else {
             let alert = UIAlertController(title: "Erreur dans la création de profil", message: "Impossible de sauvegarder le profil.", preferredStyle: .alert)

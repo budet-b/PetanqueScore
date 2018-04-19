@@ -13,6 +13,7 @@
 		CB14AA07207F862D00834626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA06207F862D00834626 /* Assets.xcassets */; };
 		CB14AA0A207F862D00834626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA08207F862D00834626 /* LaunchScreen.storyboard */; };
 		CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA11207FB91A00834626 /* GameViewController.swift */; };
+		CB2CBF3820893AAD00419070 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2CBF3720893AAD00419070 /* Game.swift */; };
 		CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB41622020809EA8005A7773 /* NewGameViewController.swift */; };
 		CB6820572087E2C600CB6CDA /* SelectPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6820562087E2C600CB6CDA /* SelectPlayerTableViewCell.swift */; };
 		CB6820592087FFA200CB6CDA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */; };
@@ -36,6 +37,7 @@
 		CB14AA09207F862D00834626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB14AA0B207F862D00834626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB14AA11207FB91A00834626 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CB2CBF3720893AAD00419070 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CB41622020809EA8005A7773 /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = "PetanqueScore/New Group/Controllers/NewGameViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CB6820562087E2C600CB6CDA /* SelectPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8C132020856F8E00E28C2B /* User.swift */,
+				CB2CBF3720893AAD00419070 /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				CBD9194E208799060059A2C7 /* SelectPlayerViewController.swift in Sources */,
 				CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */,
 				CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */,
+				CB2CBF3820893AAD00419070 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

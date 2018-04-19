@@ -15,11 +15,18 @@ class ProfilsTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()!
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        data = NSCodingData.GetProfils()!
+        tableView.reloadData()
+    }
+    
+    @objc func addTapped() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateProfile") as? CreateProfilViewController
+        navigationController?.pushViewController(vc!, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,10 +49,14 @@ class ProfilsTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfilCell", for: indexPath) as! ProfileTableViewCell
-        let img = ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
-        if (img != nil) {
-            cell.imgUser.image = img
-        } else {
+        if (data[indexPath.row].imageUrl?.path) != nil {
+            if let img = ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!) {
+                cell.imgUser.image = img
+            } else {
+                cell.imgUser.image = UIImage(named: "profilPlaceholder")
+            }
+        }
+        else {
             cell.imgUser.image = UIImage(named: "profilPlaceholder")
         }
         cell.imgUser.layer.masksToBounds = true
@@ -74,9 +85,7 @@ class ProfilsTVC: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             _ = NSCodingData.Save(profiles: data)
             tableView.reloadData()
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
  
 
