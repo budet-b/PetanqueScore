@@ -8,10 +8,7 @@
 
 import Foundation
 
-import Foundation
-import os.log
-
-class Game: NSObject {
+class Game: NSObject, NSCoding {
     
     //MARK: Properties
     
@@ -42,28 +39,23 @@ class Game: NSObject {
     }
     
     //MARK: NSCoding
-    /*
+    
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(firstname, forKey: PropertyKey.firstname)
-        aCoder.encode(lastname, forKey: PropertyKey.lastname)
-        aCoder.encode(imageUrl?.path, forKey: PropertyKey.imageurl)
+        aCoder.encode(equipe1, forKey: PropertyKey.equipe1)
+        aCoder.encode(equipe2, forKey: PropertyKey.equipe2)
+        aCoder.encode(victNumber, forKey: PropertyKey.victNumber)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        guard let firstname = aDecoder.decodeObject(forKey: PropertyKey.firstname) as? String else {
-            os_log("Unable to decode the name.", log: OSLog.default, type: .debug)
+        guard let equipe1 = aDecoder.decodeObject(forKey: PropertyKey.equipe1) as? [User] else {
             return nil
         }
-        guard let lastname = aDecoder.decodeObject(forKey: PropertyKey.lastname) as? String else {
-            os_log("Unable to decode the lastname.", log: OSLog.default, type: .debug)
+        guard let equipe2 = aDecoder.decodeObject(forKey: PropertyKey.equipe2) as? [User] else {
             return nil
         }
-        let imageurl = aDecoder.decodeObject(forKey: PropertyKey.imageurl) as? String
-        var url = NSURL(fileURLWithPath: "")
-        if (imageurl != nil)
-        {
-            url = NSURL(fileURLWithPath: imageurl!)
+        guard let victNumber = aDecoder.decodeObject(forKey: PropertyKey.victNumber) as? Int else {
+            return nil
         }
-        self.init(first: firstname, last: lastname, url: url)
-    }*/
+        self.init(equipe1: equipe1, equipe2: equipe2, victNumber: victNumber)
+    }
 }

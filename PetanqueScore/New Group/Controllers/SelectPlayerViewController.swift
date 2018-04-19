@@ -10,27 +10,38 @@ import UIKit
 
 class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var validateButton: UIButton!
     @IBOutlet weak var tableViewPlayers: UITableView!
     var data: [User] = []
+    var selectedPlayer: [User] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()!
+        self.navigationController?.navigationItem.hidesBackButton = true
+        self.navigationItem.hidesBackButton = true
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier)
+        if segue.identifier == "NewGame" {
+            if let vc = segue.destination as? NewGameViewController {
+                vc.equipe1 = selectedPlayer
+            }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -57,5 +68,17 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableV", for: indexPath) as! SelectPlayerTableViewCell
         cell.accessoryType = .none
         cell.backgroundColor = UIColor.white
+        var i = 0
+        for item in data {
+            if item == data[indexPath.row] {
+                selectedPlayer.remove(at: i)
+            }
+            i += 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableV", for: indexPath) as! SelectPlayerTableViewCell
+        selectedPlayer.append(data[indexPath.row])
     }
 }
