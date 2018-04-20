@@ -10,4 +10,5 @@ import UIKit
 
 class ProfilSelectedGameCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var userName: UILabel!
 }

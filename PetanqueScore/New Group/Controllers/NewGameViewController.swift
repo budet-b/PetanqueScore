@@ -10,7 +10,7 @@ import UIKit
 
 class NewGameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return equipe1.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -25,6 +25,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         cell.userImg.layer.masksToBounds = true
         cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
         cell.userImg.clipsToBounds = true
+        cell.userName.text = equipe1[indexPath.row].firstname
         return cell
     }
     
@@ -42,6 +43,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()
+        
 
         // Do any additional setup after loading the view.
     }

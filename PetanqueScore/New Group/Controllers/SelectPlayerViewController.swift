@@ -17,14 +17,14 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()!
-        self.navigationController?.navigationItem.hidesBackButton = true
-        self.navigationItem.hidesBackButton = true
+//        self.navigationController?.navigationItem.hidesBackButton = true
+//        self.navigationItem.hidesBackButton = true
         
         // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonAction(_ sender: Any) {
-        //self.navigationController?.popViewController(animated: true)
+        //performSegue(withIdentifier: "NewGame", sender: self)
     }
     
     
@@ -36,6 +36,7 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
         if segue.identifier == "NewGame" {
             if let vc = segue.destination as? NewGameViewController {
                 vc.equipe1 = selectedPlayer
+                //self.navigationController?.popViewController(animated: true)
             }
         }
         // Get the new view controller using segue.destinationViewController.
