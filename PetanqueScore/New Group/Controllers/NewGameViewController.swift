@@ -9,25 +9,6 @@
 import UIKit
 
 class NewGameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return equipe1.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilSelectedGame", for: indexPath) as! ProfilSelectedGameCollectionViewCell
-    
-        let img = ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
-        if (img != nil) {
-            cell.userImg.image = img
-        } else {
-            cell.userImg.image = UIImage(named: "profilPlaceholder")
-        }
-        cell.userImg.layer.masksToBounds = true
-        cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
-        cell.userImg.clipsToBounds = true
-        cell.userName.text = equipe1[indexPath.row].firstname
-        return cell
-    }
     
     // TextFields
     @IBOutlet weak var Equipe2TextField: UITextField!
@@ -35,16 +16,40 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var equipe1collectionView: UICollectionView!
     var data: [User]?
     var equipe1: [User] = []
-
+    var equipe2: [User] = []
+    
+    @IBOutlet weak var selectFirstTeam: UIButton!
+    
+    
+    @IBAction func selectFirstTeamOnClick(_ sender: Any) {
+        guard let vc2 = storyboard?.instantiateViewController(withIdentifier: "SelectPlayer") else {
+            return
+        }
+        UserDefaults.standard.setValue("Equipe1", forKey: "Equipe")
+        navigationController?.pushViewController(vc2, animated: true)
+    }
+    
+    
+    @IBOutlet weak var selectSecondTeam: UIButton!
+    
+    @IBAction func selectSecondTeamOnClick(_ sender: Any) {
+        guard let vc2 = storyboard?.instantiateViewController(withIdentifier: "SelectPlayer") else {
+            return
+        }
+        UserDefaults.standard.setValue("Equipe2", forKey: "Equipe")
+        navigationController?.pushViewController(vc2, animated: true)
+    }
+    
     @IBAction func CreateGame(_ sender: Any) {
-        let vc = GameViewController()
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "GameController") else {
+            return
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()
-        
-
+        equipe1collectionView.restorationIdentifier = "Equipe1"
         // Do any additional setup after loading the view.
     }
 
@@ -56,9 +61,45 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        print("Equipe1: \(equipe1.count)")
-        equipe1collectionView.layoutIfNeeded()
         equipe1collectionView.reloadData()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView.restorationIdentifier == "Equipe1" {
+            return equipe1.count
+        } else {
+            return equipe2.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilSelectedGame", for: indexPath) as! ProfilSelectedGameCollectionViewCell
+        if collectionView.restorationIdentifier == "Equipe1" {
+            let img = ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
+            if (img != nil) {
+                cell.userImg.image = img
+            } else {
+                cell.userImg.image = UIImage(named: "profilPlaceholder")
+            }
+            cell.userImg.layer.masksToBounds = true
+            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
+            cell.userImg.clipsToBounds = true
+            cell.userName.text = equipe1[indexPath.row].firstname
+        }
+        else {
+            let img = ImageLoad.loadImage(fileName: (equipe2[indexPath.row].imageUrl?.path)!)
+            if (img != nil) {
+                cell.userImg.image = img
+            } else {
+                cell.userImg.image = UIImage(named: "profilPlaceholder")
+            }
+            cell.userImg.layer.masksToBounds = true
+            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
+            cell.userImg.clipsToBounds = true
+            cell.userName.text = equipe2[indexPath.row].firstname
+        }
+        return cell
     }
     
     /*

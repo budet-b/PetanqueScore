@@ -36,6 +36,12 @@ class GameViewController: UIViewController {
     @IBAction func stepperEquipe2Tap(_ sender: AnyObject) {
         scoreEquipe2.text = "\(Int(stepperEquipe2.value))"
     }
+    
+    @IBAction func finishGameOnClick(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

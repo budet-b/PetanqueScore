@@ -410,64 +410,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2zb-mh-3AO">
-                                <rect key="frame" x="16" y="651" width="343" height="65"/>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.039215686270000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Asm-78-y35"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jou-sk-JJZ">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8M8-9N-pye">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-gk-tuq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Izf-E0-gW6">
-                                        <rect key="frame" x="73.333333333333329" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Lat-pd-KAf">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="17N-41-90R" id="ilW-2z-vL3"/>
-                                    <outlet property="delegate" destination="17N-41-90R" id="l7O-eK-gbd"/>
-                                </connections>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAc-4l-TtI">
                                 <rect key="frame" x="99" y="126" width="170" height="30"/>
                                 <state key="normal" title="Sélectionner des joueurs"/>
                                 <connections>
-                                    <segue destination="DYo-xF-P5R" kind="show" id="18g-1m-oWW"/>
+                                    <action selector="selectFirstTeamOnClick:" destination="17N-41-90R" eventType="touchUpInside" id="xkT-kW-NfO"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-aH-L9i">
@@ -591,8 +538,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="17N-41-90R" id="sDu-qu-krq"/>
-                                    <outlet property="delegate" destination="17N-41-90R" id="TJo-N2-iXg"/>
+                                    <outlet property="dataSource" destination="17N-41-90R" id="REW-Tq-3Nn"/>
+                                    <outlet property="delegate" destination="17N-41-90R" id="ljg-ix-VHo"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14E-a1-JuI">
@@ -600,7 +547,6 @@
                                 <state key="normal" title="Lancer"/>
                                 <connections>
                                     <action selector="CreateGame:" destination="17N-41-90R" eventType="touchUpInside" id="cb8-Kj-QMp"/>
-                                    <segue destination="HT1-n7-nIn" kind="show" id="Kf3-Yg-Nh4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lFc-SI-jY5">
@@ -612,6 +558,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcn-Ut-xzH">
                                 <rect key="frame" x="101" y="384" width="170" height="30"/>
                                 <state key="normal" title="Sélectionner des joueurs"/>
+                                <connections>
+                                    <action selector="selectSecondTeamOnClick:" destination="17N-41-90R" eventType="touchUpInside" id="sGj-1s-X5c"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipe 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JS-HU-6rt">
                                 <rect key="frame" x="16" y="303" width="67" height="21"/>
@@ -626,7 +575,6 @@
                             <constraint firstItem="lFc-SI-jY5" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="16" id="0jW-ik-cBo"/>
                             <constraint firstItem="PZH-lP-jM4" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="16" id="1X3-tR-KG0"/>
                             <constraint firstItem="hXv-WN-9du" firstAttribute="top" secondItem="PZH-lP-jM4" secondAttribute="bottom" constant="8" id="1hL-Wp-SEd"/>
-                            <constraint firstItem="cHF-o1-BQE" firstAttribute="trailing" secondItem="2zb-mh-3AO" secondAttribute="trailing" constant="16" id="2Pe-ys-e1m"/>
                             <constraint firstItem="Jcn-Ut-xzH" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="101" id="5cL-Zr-bc5"/>
                             <constraint firstItem="14E-a1-JuI" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="164" id="6vO-9b-qub"/>
                             <constraint firstItem="YhM-HH-EZj" firstAttribute="top" secondItem="XfC-yF-IeQ" secondAttribute="bottom" constant="10" id="8wV-7F-bfW"/>
@@ -638,16 +586,14 @@
                             <constraint firstItem="cHF-o1-BQE" firstAttribute="trailing" secondItem="7JS-HU-6rt" secondAttribute="trailing" constant="292" id="Gwd-On-FiJ"/>
                             <constraint firstItem="cHF-o1-BQE" firstAttribute="trailing" secondItem="lFc-SI-jY5" secondAttribute="trailing" constant="16" id="ITV-K0-hOD"/>
                             <constraint firstItem="XfC-yF-IeQ" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" id="JOL-LX-JCV"/>
+                            <constraint firstItem="cHF-o1-BQE" firstAttribute="bottom" secondItem="YhM-HH-EZj" secondAttribute="bottom" constant="135" id="Jgf-Mx-XOq"/>
                             <constraint firstItem="hXv-WN-9du" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="16" id="Qwi-nF-hg4"/>
                             <constraint firstItem="XfC-yF-IeQ" firstAttribute="top" secondItem="Jcn-Ut-xzH" secondAttribute="bottom" constant="25" id="RSY-kf-FZ2"/>
                             <constraint firstItem="7JS-HU-6rt" firstAttribute="top" secondItem="A8W-aH-L9i" secondAttribute="bottom" constant="8" id="RpW-ed-yV8"/>
                             <constraint firstItem="cAc-4l-TtI" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="99" id="TXX-Nw-cqP"/>
-                            <constraint firstItem="2zb-mh-3AO" firstAttribute="top" secondItem="YhM-HH-EZj" secondAttribute="bottom" constant="8" id="Wrq-cW-olN"/>
-                            <constraint firstItem="14E-a1-JuI" firstAttribute="top" secondItem="2zb-mh-3AO" secondAttribute="bottom" constant="26" id="X2n-gP-glQ"/>
                             <constraint firstItem="cHF-o1-BQE" firstAttribute="trailing" secondItem="PZH-lP-jM4" secondAttribute="trailing" constant="294" id="YDU-Wh-kZK"/>
                             <constraint firstItem="7JS-HU-6rt" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="16" id="c6d-2c-iiE"/>
                             <constraint firstItem="cHF-o1-BQE" firstAttribute="trailing" secondItem="hXv-WN-9du" secondAttribute="trailing" constant="16" id="dfN-9F-rnu"/>
-                            <constraint firstItem="2zb-mh-3AO" firstAttribute="leading" secondItem="cHF-o1-BQE" secondAttribute="leading" constant="16" id="eAv-Se-QQf"/>
                             <constraint firstItem="A8W-aH-L9i" firstAttribute="top" secondItem="cAc-4l-TtI" secondAttribute="bottom" constant="8" id="fAZ-D9-awg"/>
                             <constraint firstItem="PZH-lP-jM4" firstAttribute="top" secondItem="cHF-o1-BQE" secondAttribute="top" constant="15" id="fCN-Qr-AYm"/>
                             <constraint firstItem="cAc-4l-TtI" firstAttribute="top" secondItem="hXv-WN-9du" secondAttribute="bottom" constant="8" id="fOz-6H-c9z"/>
@@ -663,6 +609,8 @@
                         <outlet property="Equipe1TextField" destination="hXv-WN-9du" id="Srh-Sj-mmy"/>
                         <outlet property="Equipe2TextField" destination="lFc-SI-jY5" id="Yhv-SY-l5U"/>
                         <outlet property="equipe1collectionView" destination="A8W-aH-L9i" id="E5t-IV-IXM"/>
+                        <outlet property="selectFirstTeam" destination="cAc-4l-TtI" id="xSm-Vq-UJ8"/>
+                        <outlet property="selectSecondTeam" destination="Jcn-Ut-xzH" id="deu-eq-3Yo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFb-eS-XGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -672,7 +620,7 @@
         <!--Sélection des joueurs-->
         <scene sceneID="Ub0-NT-x3z">
             <objects>
-                <viewController title="Sélection des joueurs" id="DYo-xF-P5R" customClass="SelectPlayerViewController" customModule="PetanqueScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectPlayer" title="Sélection des joueurs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DYo-xF-P5R" customClass="SelectPlayerViewController" customModule="PetanqueScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mcl-IN-uAz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -758,12 +706,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydL-cy-kfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3048.8000000000002" y="-333.25123152709364"/>
+            <point key="canvasLocation" x="3020" y="50"/>
         </scene>
         <!--Game-->
         <scene sceneID="1c6-HI-0jW">
             <objects>
-                <viewController title="Game" id="HT1-n7-nIn" customClass="GameViewController" customModule="PetanqueScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameController" title="Game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HT1-n7-nIn" customClass="GameViewController" customModule="PetanqueScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tl0-QH-Qlt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -806,6 +754,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cav-OE-aVi">
                                 <rect key="frame" x="128" y="693" width="120" height="30"/>
                                 <state key="normal" title="Terminer la partie"/>
+                                <connections>
+                                    <action selector="finishGameOnClick:" destination="HT1-n7-nIn" eventType="touchUpInside" id="Uje-uQ-UUc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRP-6Q-gR9">
                                 <rect key="frame" x="114" y="553" width="146" height="60"/>
@@ -834,7 +785,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7m9-x6-M6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="50"/>
+            <point key="canvasLocation" x="2174" y="767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8iR-cQ-Ydi">
@@ -856,7 +807,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="18g-1m-oWW"/>
         <segue reference="VGx-f5-8bZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -34,8 +34,15 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewGame" {
             if let vc = segue.destination as? NewGameViewController {
-                vc.equipe1 = selectedPlayer
-                //self.navigationController?.popViewController(animated: true)
+                guard let tmp = UserDefaults.standard.string(forKey: "Equipe") else {
+                    return
+                }
+                if tmp == "Equipe1" {
+                    vc.equipe1 = selectedPlayer
+                }
+                else if tmp == "Equipe2" {
+                    vc.equipe2 = selectedPlayer
+                }
             }
         }
         // Get the new view controller using segue.destinationViewController.
