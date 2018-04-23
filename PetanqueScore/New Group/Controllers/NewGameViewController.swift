@@ -14,6 +14,8 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var Equipe2TextField: UITextField!
     @IBOutlet weak var Equipe1TextField: UITextField!
     @IBOutlet weak var equipe1collectionView: UICollectionView!
+    @IBOutlet weak var equipe2collectionView: UICollectionView!
+    
     var data: [User]?
     var equipe1: [User] = []
     var equipe2: [User] = []
@@ -61,7 +63,10 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
+        equipe1 = Equipe.equipe1
+        equipe2 = Equipe.equipe2
         equipe1collectionView.reloadData()
+        equipe2collectionView.reloadData()
     }
     
     
@@ -75,19 +80,23 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilSelectedGame", for: indexPath) as! ProfilSelectedGameCollectionViewCell
-        if collectionView.restorationIdentifier == "Equipe1" {
-            let img = ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
-            if (img != nil) {
-                cell.userImg.image = img
-            } else {
-                cell.userImg.image = UIImage(named: "profilPlaceholder")
+        if collectionView == equipe1collectionView {
+            if collectionView.restorationIdentifier == "Equipe1" {
+                equipe1 = Equipe.equipe1
+                let img = ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
+                if (img != nil) {
+                    cell.userImg.image = img
+                } else {
+                    cell.userImg.image = UIImage(named: "profilPlaceholder")
+                }
+                cell.userImg.layer.masksToBounds = true
+                cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
+                cell.userImg.clipsToBounds = true
+                cell.userName.text = equipe1[indexPath.row].firstname
             }
-            cell.userImg.layer.masksToBounds = true
-            cell.userImg.layer.cornerRadius = cell.userImg.frame.size.width / 2
-            cell.userImg.clipsToBounds = true
-            cell.userName.text = equipe1[indexPath.row].firstname
         }
-        else {
+        else if collectionView == equipe2collectionView {
+            equipe2 = Equipe.equipe2
             let img = ImageLoad.loadImage(fileName: (equipe2[indexPath.row].imageUrl?.path)!)
             if (img != nil) {
                 cell.userImg.image = img
@@ -102,15 +111,18 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         return cell
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameViewController {
+            vc.equipe1 = equipe1
+            vc.equipe2 = equipe2
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
 
@@ -122,7 +134,7 @@ extension NewGameViewController: UITextFieldDelegate {
         }
         if textField == Equipe2TextField
         {
-            Equipe1TextField.resignFirstResponder()
+            Equipe2TextField.endEditing(true)
         }
         return true
     }

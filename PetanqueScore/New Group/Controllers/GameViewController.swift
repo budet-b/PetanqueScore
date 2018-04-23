@@ -14,6 +14,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreEquipe2: UILabel!
     @IBOutlet weak var stepperEquipe1: UIStepper!
     @IBOutlet weak var stepperEquipe2: UIStepper!
+    var equipe1: [User]?
+    var equipe2: [User]?
+    var maxPoints: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreEquipe1.text = "0"

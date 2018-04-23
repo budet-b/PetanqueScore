@@ -38,9 +38,11 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
                     return
                 }
                 if tmp == "Equipe1" {
+                    Equipe.equipe1 = selectedPlayer
                     vc.equipe1 = selectedPlayer
                 }
                 else if tmp == "Equipe2" {
+                    Equipe.equipe2 = selectedPlayer
                     vc.equipe2 = selectedPlayer
                 }
             }
@@ -59,10 +61,9 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
         cell.userName.text = data[indexPath.row].firstname
         cell.userVic.text = "12 victoires"
         cell.userPercent.text = "30%"
-        let img = ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
-        if (img != nil) {
-            cell.userImg.image = img
-        } else {
+        do {
+            let img = try ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
+        } catch {
             cell.userImg.image = UIImage(named: "profilPlaceholder")
         }
         cell.userImg.layer.masksToBounds = true
