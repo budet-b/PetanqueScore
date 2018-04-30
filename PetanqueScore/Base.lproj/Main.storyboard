@@ -618,6 +618,7 @@
                         <outlet property="Equipe2TextField" destination="lFc-SI-jY5" id="Yhv-SY-l5U"/>
                         <outlet property="equipe1collectionView" destination="A8W-aH-L9i" id="E5t-IV-IXM"/>
                         <outlet property="equipe2collectionView" destination="XfC-yF-IeQ" id="F3P-Y2-zvY"/>
+                        <outlet property="limiteScore" destination="LDg-Kc-fal" id="Gx5-d6-j80"/>
                         <outlet property="selectFirstTeam" destination="cAc-4l-TtI" id="xSm-Vq-UJ8"/>
                         <outlet property="selectSecondTeam" destination="Jcn-Ut-xzH" id="deu-eq-3Yo"/>
                     </connections>

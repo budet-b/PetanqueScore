@@ -20,6 +20,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     var equipe1: [User] = []
     var equipe2: [User] = []
     
+    @IBOutlet weak var limiteScore: UISegmentedControl!
     @IBOutlet weak var selectFirstTeam: UIButton!
     
     
@@ -43,9 +44,12 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     @IBAction func CreateGame(_ sender: Any) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "GameController") else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "GameController") as? GameViewController else {
             return
         }
+        let maxScore = Int(limiteScore.titleForSegment(at: limiteScore.selectedSegmentIndex)!)
+        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!)
+        vc.gameObject = newGame
         navigationController?.pushViewController(vc, animated: true)
     }
     override func viewDidLoad() {
