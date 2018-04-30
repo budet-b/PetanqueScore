@@ -61,6 +61,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResumeGame") as? ResumeGameViewController
+        vc?.idGame = indexPath.row
         navigationController?.pushViewController(vc!, animated: true)
     }
     

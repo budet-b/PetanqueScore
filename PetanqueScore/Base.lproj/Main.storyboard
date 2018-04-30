@@ -321,34 +321,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W2A-ta-d4h">
-                                <rect key="frame" x="16" y="477" width="343" height="251"/>
+                                <rect key="frame" x="16" y="499.66666666666669" width="343" height="228.33333333333331"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-Y7-bHg">
                                 <rect key="frame" x="151" y="748" width="72" height="30"/>
                                 <state key="normal" title="Supprimer">
                                     <color key="titleColor" red="0.95686274510000002" green="0.039215686270000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteGamePressed:" destination="Eye-2g-8A4" eventType="touchUpInside" id="Kv8-VX-c9S"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipe1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00u-n5-q9A">
-                                <rect key="frame" x="16" y="134" width="167" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="134" width="167" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyb-af-kGE">
-                                <rect key="frame" x="16" y="174" width="167" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="185.33333333333334" width="167" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHK-tc-Y5b">
-                                <rect key="frame" x="191" y="174" width="164" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="191" y="185.33333333333334" width="164" height="31.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zAb-gg-ZA2">
-                                <rect key="frame" x="16" y="216" width="167" height="253"/>
+                                <rect key="frame" x="16" y="238.66666666666663" width="167" height="253"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="167" id="bMU-ru-JdK"/>
@@ -372,7 +375,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vIF-M5-c5m">
-                                <rect key="frame" x="192" y="216" width="167" height="253"/>
+                                <rect key="frame" x="192" y="237.66666666666663" width="167" height="254"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aw3-iM-fX9">
                                     <size key="itemSize" width="50" height="50"/>
@@ -392,8 +395,8 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipe2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-JD-Wwl">
-                                <rect key="frame" x="191" y="134" width="164" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="191" y="134" width="164" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -428,6 +431,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WC2-8B-xqe"/>
                     </view>
+                    <connections>
+                        <outlet property="deleteGame" destination="oDU-Y7-bHg" id="xrC-gL-CkZ"/>
+                        <outlet property="equipe1CollectionView" destination="zAb-gg-ZA2" id="RxD-Wm-L5e"/>
+                        <outlet property="equipe1Name" destination="00u-n5-q9A" id="CnQ-v2-xTM"/>
+                        <outlet property="equipe2CollectionView" destination="vIF-M5-c5m" id="dqD-hV-X0J"/>
+                        <outlet property="equipe2Name" destination="gnB-JD-Wwl" id="4Iz-Fw-hZv"/>
+                        <outlet property="gameLocation" destination="W2A-ta-d4h" id="GuE-ip-Xj3"/>
+                        <outlet property="score1Name" destination="Gyb-af-kGE" id="hqB-8p-O3P"/>
+                        <outlet property="score2Name" destination="sHK-tc-Y5b" id="mfr-ET-GtW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZC-Hq-blO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
