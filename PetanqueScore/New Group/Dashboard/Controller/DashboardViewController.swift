@@ -60,7 +60,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResumeGame") as? ResumeGameViewController
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     /*
