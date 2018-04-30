@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var scoreEquipe1: UILabel!
     @IBOutlet weak var scoreEquipe2: UILabel!
@@ -20,14 +22,18 @@ class GameViewController: UIViewController {
     var gameObject: Game?
     var equipe1Name: String = ""
     var equipe2Name: String = ""
-    
+    var games: [Game] = []
+    let locationManager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreEquipe1.text = "0"
         scoreEquipe2.text = "0"
         stepperEquipe1.minimumValue = 0.0
         stepperEquipe2.minimumValue = 0.0
-        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +44,7 @@ class GameViewController: UIViewController {
         limiteScore = gameObject?.victNumber
         equipe1Name = (gameObject?.equipe1Name)!
         equipe2Name = (gameObject?.equipe2Name)!
+        games = NSCodingData.GetGames() ?? []
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,14 +56,7 @@ class GameViewController: UIViewController {
         scoreEquipe1.text = "\(Int(stepperEquipe1.value))"
         if (Int(stepperEquipe1.value) >= limiteScore!)
         {
-            print("Equipe 1 a gagné")
-            let alert = UIAlertController(title: "Equipe 1 a gagné !", message: "Félicitations à \(equipe1Name)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Retour au menu", style: .default, handler:
-                {
-                    (alert) -> Void in self.navigationController?.popToRootViewController(animated: true)
-                    
-                }))
-            self.present(alert, animated: true)
+            shouldFinishGame(winner: 0)
         }
     }
     
@@ -64,19 +64,39 @@ class GameViewController: UIViewController {
         scoreEquipe2.text = "\(Int(stepperEquipe2.value))"
         if (Int(stepperEquipe2.value) >= limiteScore!)
         {
-            print("Equipe 2 a gagné")
-            let alert = UIAlertController(title: "Equipe 2 a gagné !", message: "Félicitations à \(equipe2Name)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Retour au menu", style: .default, handler:
-                {
-                    (alert) -> Void in self.navigationController?.popToRootViewController(animated: true)
-                    
-                }))
-            self.present(alert, animated: true)
+            shouldFinishGame(winner: 1)
         }
     }
     
     @IBAction func finishGameOnClick(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func shouldFinishGame(winner: Int) {
+        gameObject?.equipe1Score = Int(stepperEquipe1.value)
+        gameObject?.equipe2Score = Int(stepperEquipe2.value)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        if (winner == 0)
+        {
+            alert.title = "Equipe 1 à gagné !"
+            alert.message = "Félicitations à \(equipe1Name)"
+        } else {
+            alert.title = "Equipe 2 à gagné !"
+            alert.message = "Félicitations à \(equipe2Name)"
+        }
+        alert.addAction(UIAlertAction(title: "Retour au menu", style: .default, handler:
+            {
+                (alert) -> Void in self.navigationController?.popToRootViewController(animated: true)
+        }))
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            gameObject?.location = locationManager.location?.coordinate
+        }
+        games.append(gameObject!)
+        _ = NSCodingData.SaveGame(games: games)
+        self.present(alert, animated: true)
     }
     
     

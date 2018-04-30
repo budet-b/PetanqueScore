@@ -48,7 +48,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
             return
         }
         let maxScore = Int(limiteScore.titleForSegment(at: limiteScore.selectedSegmentIndex)!)
-        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!)
+        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!, equipe1Score: 0, equipe2Score: 0, locationGame: nil)
         vc.gameObject = newGame
         navigationController?.pushViewController(vc, animated: true)
     }

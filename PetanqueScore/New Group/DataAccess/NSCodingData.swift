@@ -16,4 +16,11 @@ class NSCodingData {
     static public func GetProfils() -> [User]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: User.ArchiveURL.path) as? [User]
     }
+    static public func SaveGame(games: [Game]) -> Bool {
+        return NSKeyedArchiver.archiveRootObject(games, toFile: Game.ArchiveURL.path)
+    }
+    
+    static public func GetGames() -> [Game]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Game.ArchiveURL.path) as? [Game]
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class Game: NSObject, NSCoding {
     
@@ -17,6 +18,9 @@ class Game: NSObject, NSCoding {
     var victNumber: Int
     var equipe1Name: String
     var equipe2Name: String
+    var equipe1Score: Int
+    var equipe2Score: Int
+    var location: CLLocationCoordinate2D?
     
     //MARK: Archiving Paths
     
@@ -31,17 +35,23 @@ class Game: NSObject, NSCoding {
         static let victNumber = "CvictNumber"
         static let equipe1Name = "Cequipe1Name"
         static let equipe2Name = "Cequipe2Name"
+        static let equipe1Score = "Cequipe1Score"
+        static let equipe2Score = "Cequipe2Score"
+        static let locationGame = "ClocationGame"
     }
     
     //MARK: Initialization
     
-    init(equipe1: [User], equipe2: [User], victNumber: Int, equipe1Name: String, equipe2Name: String)
+    init(equipe1: [User], equipe2: [User], victNumber: Int, equipe1Name: String, equipe2Name: String, equipe1Score: Int, equipe2Score: Int, locationGame: CLLocationCoordinate2D?)
     {
         self.equipe1 = equipe1
         self.equipe2 = equipe2
         self.victNumber = victNumber
         self.equipe1Name = equipe1Name
         self.equipe2Name = equipe2Name
+        self.equipe1Score = equipe1Score
+        self.equipe2Score = equipe2Score
+        self.location = locationGame
     }
     
     //MARK: NSCoding
@@ -52,6 +62,9 @@ class Game: NSObject, NSCoding {
         aCoder.encode(victNumber, forKey: PropertyKey.victNumber)
         aCoder.encode(equipe1Name, forKey: PropertyKey.equipe1Name)
         aCoder.encode(equipe2Name, forKey: PropertyKey.equipe2Name)
+        aCoder.encode(equipe1Score, forKey: PropertyKey.equipe1Score)
+        aCoder.encode(equipe2Score, forKey: PropertyKey.equipe2Score)
+        aCoder.encode(location, forKey: PropertyKey.locationGame)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -70,6 +83,13 @@ class Game: NSObject, NSCoding {
         guard let equipe2Name = aDecoder.decodeObject(forKey: PropertyKey.equipe2Name) as? String else {
             return nil
         }
-        self.init(equipe1: equipe1, equipe2: equipe2, victNumber: victNumber, equipe1Name: equipe1Name, equipe2Name: equipe2Name)
+        guard let equipe1Score = aDecoder.decodeObject(forKey: PropertyKey.equipe1Score) as? Int else {
+            return nil
+        }
+        guard let equipe2Score = aDecoder.decodeObject(forKey: PropertyKey.equipe2Score) as? Int else {
+            return nil
+        }
+        let location = aDecoder.decodeObject(forKey: PropertyKey.locationGame) as? CLLocationCoordinate2D
+        self.init(equipe1: equipe1, equipe2: equipe2, victNumber: victNumber, equipe1Name: equipe1Name, equipe2Name: equipe2Name, equipe1Score: equipe1Score, equipe2Score: equipe2Score, locationGame: location)
     }
 }
