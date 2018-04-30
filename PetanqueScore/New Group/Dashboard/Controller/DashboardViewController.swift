@@ -8,12 +8,23 @@
 
 import UIKit
 
-class DashboardViewController: UIViewController {
-
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var historiqueGames: UITableView!
+    var games: [Game] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        historiqueGames.dataSource = self
+        historiqueGames.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        games = NSCodingData.GetGames()!
+        historiqueGames.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +32,37 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryGameCell", for: indexPath) as! HistoryGameTableViewCell
+        cell.team1Name.text = games[indexPath.row].equipe1Name
+        cell.team2Name.text = games[indexPath.row].equipe2Name
+        let score1 = String(games[indexPath.row].equipe1Score!)
+        let score2 = String(games[indexPath.row].equipe2Score!)
+        cell.team1Score.text = "\(score1)"
+        cell.team2Score.text = "\(score2)"
+        if (games[indexPath.row].equipe1Score! > games[indexPath.row].equipe2Score!)
+        {
+            cell.team1Score.textColor = UIColor.green
+            cell.team1Name.textColor = UIColor.green
+            cell.team2Score.textColor = UIColor.red
+            cell.team2Name.textColor = UIColor.red
+        } else {
+            cell.team2Score.textColor = UIColor.green
+            cell.team2Name.textColor = UIColor.green
+            cell.team1Name.textColor = UIColor.red
+            cell.team1Score.textColor = UIColor.red
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -32,8 +73,4 @@ class DashboardViewController: UIViewController {
     }
     */
 
-}
-
-extension DashboardViewController: UITableViewDelegate {
-    
 }

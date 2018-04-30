@@ -28,6 +28,8 @@
     <string>This app requires access to the photo library.</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>PetanqueScore requires access to your location.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>PetanqueScore requires access to your location.</string>
     <key>NSLocationAlwaysUsageDescription</key>
     <string>PetanqueScore requires access to your location.</string>
     <key>UIRequiredDeviceCapabilities</key>

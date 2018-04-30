@@ -59,6 +59,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             ImageLoad.removeImage()
             _ = NSCodingData.Save(profiles: [])
+            _ = NSCodingData.SaveGame(games: [])
             let alert = UIAlertController(title: "Données Supprimés", message: "", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
             self.present(alert, animated: true)

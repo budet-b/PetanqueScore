@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -198,90 +199,69 @@
                                 <rect key="frame" x="0.0" y="478" width="375" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="0Hm-K4-6Vk" style="IBUITableViewCellStyleDefault" id="eZa-T6-Q8a">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryGameCell" id="eZa-T6-Q8a" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZa-T6-Q8a" id="MCi-il-PdE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Hm-K4-6Vk">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KU-Jg-Bju">
+                                                    <rect key="frame" x="141" y="12" width="16" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeL-XK-UVc">
+                                                    <rect key="frame" x="167" y="12" width="8" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TeamName1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoP-h8-ewV">
+                                                    <rect key="frame" x="8" y="12" width="128" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TeamName2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzk-ED-J6R">
+                                                    <rect key="frame" x="201" y="12" width="125" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-pW-DFY">
+                                                    <rect key="frame" x="185" y="12" width="11" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BeL-XK-UVc" firstAttribute="leading" secondItem="4KU-Jg-Bju" secondAttribute="trailing" constant="10" id="9Yo-mQ-yYa"/>
+                                                <constraint firstItem="PTr-pW-DFY" firstAttribute="bottom" secondItem="MCi-il-PdE" secondAttribute="bottomMargin" id="Bg8-jI-vpq"/>
+                                                <constraint firstItem="4KU-Jg-Bju" firstAttribute="leading" secondItem="IoP-h8-ewV" secondAttribute="trailing" constant="5" id="KSN-O5-hBf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mzk-ED-J6R" secondAttribute="trailing" constant="8" id="Ln3-4U-I5K"/>
+                                                <constraint firstItem="4KU-Jg-Bju" firstAttribute="bottom" secondItem="MCi-il-PdE" secondAttribute="bottomMargin" id="SKO-w8-bJU"/>
+                                                <constraint firstItem="IoP-h8-ewV" firstAttribute="leading" secondItem="MCi-il-PdE" secondAttribute="leading" constant="8" id="UmM-fg-xQV"/>
+                                                <constraint firstItem="4KU-Jg-Bju" firstAttribute="top" secondItem="MCi-il-PdE" secondAttribute="topMargin" constant="1" id="VZf-Gz-RTK"/>
+                                                <constraint firstItem="Mzk-ED-J6R" firstAttribute="leading" secondItem="PTr-pW-DFY" secondAttribute="trailing" constant="5" id="Zdh-3Z-lp6"/>
+                                                <constraint firstItem="Mzk-ED-J6R" firstAttribute="top" secondItem="MCi-il-PdE" secondAttribute="topMargin" constant="1" id="aKV-m0-Kj3"/>
+                                                <constraint firstItem="BeL-XK-UVc" firstAttribute="baseline" secondItem="PTr-pW-DFY" secondAttribute="baseline" id="cFe-Rw-I3e"/>
+                                                <constraint firstItem="PTr-pW-DFY" firstAttribute="leading" secondItem="BeL-XK-UVc" secondAttribute="trailing" constant="10" id="hLn-4h-3Y1"/>
+                                                <constraint firstItem="BeL-XK-UVc" firstAttribute="centerX" secondItem="MCi-il-PdE" secondAttribute="centerX" id="hYY-hx-dkw"/>
+                                                <constraint firstItem="IoP-h8-ewV" firstAttribute="top" secondItem="MCi-il-PdE" secondAttribute="top" constant="12" id="jwY-l6-Sdu"/>
+                                                <constraint firstAttribute="bottom" secondItem="IoP-h8-ewV" secondAttribute="bottom" constant="10.67" id="sWI-VH-ObU"/>
+                                                <constraint firstItem="Mzk-ED-J6R" firstAttribute="bottom" secondItem="MCi-il-PdE" secondAttribute="bottomMargin" id="wJR-uD-kRn"/>
+                                                <constraint firstItem="PTr-pW-DFY" firstAttribute="top" secondItem="MCi-il-PdE" secondAttribute="topMargin" constant="1" id="zWG-By-cFG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="8fy-ut-Nbg" style="IBUITableViewCellStyleDefault" id="9TM-58-C1u">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9TM-58-C1u" id="mEk-2M-jmX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8fy-ut-Nbg">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Vxr-LN-16t" style="IBUITableViewCellStyleDefault" id="Z8z-82-WC7">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z8z-82-WC7" id="iBx-0A-GRR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vxr-LN-16t">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QVV-VX-cen" style="IBUITableViewCellStyleDefault" id="p9Z-cV-OoW">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p9Z-cV-OoW" id="Xqr-c2-xZN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QVV-VX-cen">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="PBN-Uv-RZL" style="IBUITableViewCellStyleDefault" id="fZl-Or-9cH">
-                                        <rect key="frame" x="0.0" y="204" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fZl-Or-9cH" id="Wqc-sH-OWI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PBN-Uv-RZL">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="team1Name" destination="IoP-h8-ewV" id="ycX-rN-8iR"/>
+                                            <outlet property="team1Score" destination="4KU-Jg-Bju" id="orm-m0-B6m"/>
+                                            <outlet property="team2Name" destination="Mzk-ED-J6R" id="zch-8G-5QM"/>
+                                            <outlet property="team2Score" destination="PTr-pW-DFY" id="UQC-Rg-l2W"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -324,10 +304,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="historiqueGames" destination="v8j-XT-iME" id="mVN-8i-mlp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OL3-1d-Q1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="50.824587706146929"/>
+            <point key="canvasLocation" x="1172" y="50.246305418719217"/>
         </scene>
         <!--Mes profils-->
         <scene sceneID="xyl-Vn-fgq">
@@ -393,13 +376,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipe 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZH-lP-jM4">
-                                <rect key="frame" x="16" y="59" width="65" height="21"/>
+                                <rect key="frame" x="16" y="155" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hXv-WN-9du">
-                                <rect key="frame" x="16" y="88" width="343" height="30"/>
+                                <rect key="frame" x="16" y="184" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="name"/>
@@ -411,14 +394,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAc-4l-TtI">
-                                <rect key="frame" x="99" y="126" width="170" height="30"/>
+                                <rect key="frame" x="99" y="222" width="170" height="30"/>
                                 <state key="normal" title="Sélectionner des joueurs"/>
                                 <connections>
                                     <action selector="selectFirstTeamOnClick:" destination="17N-41-90R" eventType="touchUpInside" id="xkT-kW-NfO"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="Equipe1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-aH-L9i">
-                                <rect key="frame" x="0.0" y="164" width="375" height="131"/>
+                                <rect key="frame" x="0.0" y="260" width="375" height="131"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="131" id="Gi2-Cr-qmr"/>
@@ -482,7 +465,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-yF-IeQ">
-                                <rect key="frame" x="0.0" y="439" width="375" height="173"/>
+                                <rect key="frame" x="0.0" y="535" width="375" height="77"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JKy-cT-2nT">
                                     <size key="itemSize" width="90" height="90"/>
@@ -492,7 +475,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfilSelectedGame" id="ZBE-Dj-oo4" customClass="ProfilSelectedGameCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="41.666666666666664" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="-6.666666666666667" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -550,20 +533,20 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lFc-SI-jY5">
-                                <rect key="frame" x="16" y="332" width="343" height="30"/>
+                                <rect key="frame" x="16" y="428" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" textContentType="name"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcn-Ut-xzH">
-                                <rect key="frame" x="101" y="384" width="170" height="30"/>
+                                <rect key="frame" x="101" y="480" width="170" height="30"/>
                                 <state key="normal" title="Sélectionner des joueurs"/>
                                 <connections>
                                     <action selector="selectSecondTeamOnClick:" destination="17N-41-90R" eventType="touchUpInside" id="sGj-1s-X5c"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipe 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JS-HU-6rt">
-                                <rect key="frame" x="16" y="303" width="67" height="21"/>
+                                <rect key="frame" x="16" y="399" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -640,7 +623,6 @@
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="DYo-xF-P5R" eventType="touchUpInside" id="RUk-JS-n5u"/>
-                                    <segue destination="17N-41-90R" kind="show" identifier="NewGame" id="VGx-f5-8bZ"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsMultipleSelection="YES" rowHeight="111" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lmw-k4-LwD">
@@ -816,7 +798,4 @@
             <point key="canvasLocation" x="232.80000000000001" y="50.824587706146929"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="VGx-f5-8bZ"/>
-    </inferredMetricsTieBreakers>
 </document>

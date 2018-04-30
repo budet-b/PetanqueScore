@@ -13,13 +13,15 @@ class Game: NSObject, NSCoding {
     
     //MARK: Properties
     
-    var equipe1: [User]
-    var equipe2: [User]
-    var victNumber: Int
-    var equipe1Name: String
-    var equipe2Name: String
-    var equipe1Score: Int
-    var equipe2Score: Int
+    var equipe1: [User]?
+    var equipe2: [User]?
+    var victNumber: Int?
+    var equipe1Name: String?
+    var equipe2Name: String?
+    var equipe1Score: Int?
+    var equipe2Score: Int?
+    var latitude: CLLocationDegrees?
+    var longitude: CLLocationDegrees?
     var location: CLLocationCoordinate2D?
     
     //MARK: Archiving Paths
@@ -37,12 +39,13 @@ class Game: NSObject, NSCoding {
         static let equipe2Name = "Cequipe2Name"
         static let equipe1Score = "Cequipe1Score"
         static let equipe2Score = "Cequipe2Score"
-        static let locationGame = "ClocationGame"
+        static let longitude = "Clongitude"
+        static let latitude = "Clatitude"
     }
     
     //MARK: Initialization
     
-    init(equipe1: [User], equipe2: [User], victNumber: Int, equipe1Name: String, equipe2Name: String, equipe1Score: Int, equipe2Score: Int, locationGame: CLLocationCoordinate2D?)
+    init(equipe1: [User], equipe2: [User], victNumber: Int, equipe1Name: String, equipe2Name: String, equipe1Score: Int, equipe2Score: Int, longitude: CLLocationDegrees?, latitude: CLLocationDegrees?)
     {
         self.equipe1 = equipe1
         self.equipe2 = equipe2
@@ -51,7 +54,8 @@ class Game: NSObject, NSCoding {
         self.equipe2Name = equipe2Name
         self.equipe1Score = equipe1Score
         self.equipe2Score = equipe2Score
-        self.location = locationGame
+        self.longitude = longitude
+        self.latitude = latitude
     }
     
     //MARK: NSCoding
@@ -64,7 +68,8 @@ class Game: NSObject, NSCoding {
         aCoder.encode(equipe2Name, forKey: PropertyKey.equipe2Name)
         aCoder.encode(equipe1Score, forKey: PropertyKey.equipe1Score)
         aCoder.encode(equipe2Score, forKey: PropertyKey.equipe2Score)
-        aCoder.encode(location, forKey: PropertyKey.locationGame)
+        aCoder.encode(longitude, forKey: PropertyKey.longitude)
+        aCoder.encode(latitude, forKey: PropertyKey.latitude)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -89,7 +94,10 @@ class Game: NSObject, NSCoding {
         guard let equipe2Score = aDecoder.decodeObject(forKey: PropertyKey.equipe2Score) as? Int else {
             return nil
         }
-        let location = aDecoder.decodeObject(forKey: PropertyKey.locationGame) as? CLLocationCoordinate2D
-        self.init(equipe1: equipe1, equipe2: equipe2, victNumber: victNumber, equipe1Name: equipe1Name, equipe2Name: equipe2Name, equipe1Score: equipe1Score, equipe2Score: equipe2Score, locationGame: location)
+        let longitude = aDecoder.decodeObject(forKey: PropertyKey.longitude) as? CLLocationDegrees
+        
+        let latitude = aDecoder.decodeObject(forKey: PropertyKey.latitude) as? CLLocationDegrees
+        
+        self.init(equipe1: equipe1, equipe2: equipe2, victNumber: victNumber, equipe1Name: equipe1Name, equipe2Name: equipe2Name, equipe1Score: equipe1Score, equipe2Score: equipe2Score, longitude: longitude, latitude: latitude)
     }
 }

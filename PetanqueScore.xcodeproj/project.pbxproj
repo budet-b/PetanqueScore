@@ -25,6 +25,7 @@
 		CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132620867CA400E28C2B /* DashboardViewController.swift */; };
 		CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132D2087542B00E28C2B /* SettingsViewController.swift */; };
 		CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */; };
+		CBCF39FE20977499001A0B87 /* HistoryGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF39FD20977499001A0B87 /* HistoryGameTableViewCell.swift */; };
 		CBD9194E208799060059A2C7 /* SelectPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9194D208799060059A2C7 /* SelectPlayerViewController.swift */; };
 		CBD9195220879A060059A2C7 /* SelectPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9195120879A060059A2C7 /* SelectPlayerCollectionViewCell.swift */; };
 		CBD9195520879E3A0059A2C7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9195420879E3A0059A2C7 /* Images.swift */; };
@@ -51,6 +52,7 @@
 		CB8C132620867CA400E28C2B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		CB8C132D2087542B00E28C2B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CB8C132F20875A4E00E28C2B /* ProfilsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilsTVC.swift; sourceTree = "<group>"; };
+		CBCF39FD20977499001A0B87 /* HistoryGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryGameTableViewCell.swift; sourceTree = "<group>"; };
 		CBD9194D208799060059A2C7 /* SelectPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerViewController.swift; sourceTree = "<group>"; };
 		CBD9195120879A060059A2C7 /* SelectPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBD9195420879E3A0059A2C7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				CB6820562087E2C600CB6CDA /* SelectPlayerTableViewCell.swift */,
 				CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */,
 				CB2CBF3920894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift */,
+				CBCF39FD20977499001A0B87 /* HistoryGameTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
 				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
 				CB6820572087E2C600CB6CDA /* SelectPlayerTableViewCell.swift in Sources */,
+				CBCF39FE20977499001A0B87 /* HistoryGameTableViewCell.swift in Sources */,
 				CB6820592087FFA200CB6CDA /* ProfileTableViewCell.swift in Sources */,
 				CB8C13242085F9EA00E28C2B /* NSCodingData.swift in Sources */,
 				CBD9195220879A060059A2C7 /* SelectPlayerCollectionViewCell.swift in Sources */,

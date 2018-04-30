@@ -14,13 +14,13 @@ class ProfilsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = NSCodingData.GetProfils()!
+        data = NSCodingData.GetProfils() ?? []
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        data = NSCodingData.GetProfils()!
+        data = NSCodingData.GetProfils() ?? []
         tableView.reloadData()
     }
     

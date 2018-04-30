@@ -44,7 +44,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         limiteScore = gameObject?.victNumber
         equipe1Name = (gameObject?.equipe1Name)!
         equipe2Name = (gameObject?.equipe2Name)!
-        games = NSCodingData.GetGames() ?? []
+        games = NSCodingData.GetGames()!
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,10 +92,11 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            gameObject?.location = locationManager.location?.coordinate
+            gameObject?.latitude = locationManager.location?.coordinate.latitude
+            gameObject?.longitude = locationManager.location?.coordinate.longitude
         }
         games.append(gameObject!)
-        _ = NSCodingData.SaveGame(games: games)
+        let val = NSCodingData.SaveGame(games: games)
         self.present(alert, animated: true)
     }
     

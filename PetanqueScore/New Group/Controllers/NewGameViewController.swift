@@ -48,7 +48,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
             return
         }
         let maxScore = Int(limiteScore.titleForSegment(at: limiteScore.selectedSegmentIndex)!)
-        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!, equipe1Score: 0, equipe2Score: 0, locationGame: nil)
+        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!, equipe1Score: 0, equipe2Score: 0, longitude: nil, latitude: nil)
         vc.gameObject = newGame
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -56,6 +56,8 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         data = NSCodingData.GetProfils()
         equipe1collectionView.restorationIdentifier = "Equipe1"
+        Equipe2TextField.delegate = self
+        Equipe1TextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -132,14 +134,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
 
 extension NewGameViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == Equipe1TextField
-        {
-            Equipe2TextField.becomeFirstResponder()
-        }
-        if textField == Equipe2TextField
-        {
-            Equipe2TextField.endEditing(true)
-        }
+        textField.resignFirstResponder()
         return true
     }
 }

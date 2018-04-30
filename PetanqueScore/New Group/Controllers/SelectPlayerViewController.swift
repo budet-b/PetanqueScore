@@ -17,13 +17,29 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils()!
-//        self.navigationController?.navigationItem.hidesBackButton = true
-//        self.navigationItem.hidesBackButton = true
-        
+
         // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonAction(_ sender: Any) {
+        
+        if let viewControllers = self.navigationController?.viewControllers {
+            let vc = viewControllers[viewControllers.count - 2] as! NewGameViewController
+            guard let tmp = UserDefaults.standard.string(forKey: "Equipe") else {
+                return
+            }
+            if tmp == "Equipe1" {
+                Equipe.equipe1 = selectedPlayer
+                vc.equipe1 = selectedPlayer
+            }
+            else if tmp == "Equipe2" {
+                Equipe.equipe2 = selectedPlayer
+                vc.equipe2 = selectedPlayer
+            }
+        }
+        
+        
+        self.navigationController?.popViewController(animated: true)
         //performSegue(withIdentifier: "NewGame", sender: self)
     }
     
@@ -32,21 +48,21 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "NewGame" {
-            if let vc = segue.destination as? NewGameViewController {
-                guard let tmp = UserDefaults.standard.string(forKey: "Equipe") else {
-                    return
-                }
-                if tmp == "Equipe1" {
-                    Equipe.equipe1 = selectedPlayer
-                    vc.equipe1 = selectedPlayer
-                }
-                else if tmp == "Equipe2" {
-                    Equipe.equipe2 = selectedPlayer
-                    vc.equipe2 = selectedPlayer
-                }
-            }
-        }
+//        if segue.identifier == "NewGame" {
+//            if let vc = segue.destination as? NewGameViewController {
+//                guard let tmp = UserDefaults.standard.string(forKey: "Equipe") else {
+//                    return
+//                }
+//                if tmp == "Equipe1" {
+//                    Equipe.equipe1 = selectedPlayer
+//                    vc.equipe1 = selectedPlayer
+//                }
+//                else if tmp == "Equipe2" {
+//                    Equipe.equipe2 = selectedPlayer
+//                    vc.equipe2 = selectedPlayer
+//                }
+//            }
+//        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
