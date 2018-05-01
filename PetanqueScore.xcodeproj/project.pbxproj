@@ -14,6 +14,8 @@
 		CB14AA07207F862D00834626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA06207F862D00834626 /* Assets.xcassets */; };
 		CB14AA0A207F862D00834626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA08207F862D00834626 /* LaunchScreen.storyboard */; };
 		CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA11207FB91A00834626 /* GameViewController.swift */; };
+		CB16E973209905070060CE04 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB16E972209905070060CE04 /* GameKit.framework */; };
+		CB16E975209905140060CE04 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB16E974209905140060CE04 /* StoreKit.framework */; };
 		CB2CBF3820893AAD00419070 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2CBF3720893AAD00419070 /* Game.swift */; };
 		CB2CBF3A20894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2CBF3920894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift */; };
 		CB2CBF3C208DC6C100419070 /* Equipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2CBF3B208DC6C100419070 /* Equipe.swift */; };
@@ -44,6 +46,9 @@
 		CB14AA09207F862D00834626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB14AA0B207F862D00834626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB14AA11207FB91A00834626 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CB16E971209904220060CE04 /* PetanqueScore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetanqueScore.entitlements; sourceTree = "<group>"; };
+		CB16E972209905070060CE04 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		CB16E974209905140060CE04 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CB2CBF3720893AAD00419070 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CB2CBF3920894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilSelectedGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB2CBF3B208DC6C100419070 /* Equipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipe.swift; sourceTree = "<group>"; };
@@ -69,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB16E973209905070060CE04 /* GameKit.framework in Frameworks */,
+				CB16E975209905140060CE04 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +87,7 @@
 			children = (
 				CB14A9FE207F862B00834626 /* PetanqueScore */,
 				CB14A9FD207F862B00834626 /* Products */,
+				CB16E96E2099041E0060CE04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +102,7 @@
 		CB14A9FE207F862B00834626 /* PetanqueScore */ = {
 			isa = PBXGroup;
 			children = (
+				CB16E971209904220060CE04 /* PetanqueScore.entitlements */,
 				CB14AA13207FB92A00834626 /* Source */,
 				CB14A9FF207F862B00834626 /* AppDelegate.swift */,
 				CB14AA01207F862B00834626 /* ViewController.swift */,
@@ -117,6 +126,15 @@
 			);
 			name = Source;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CB16E96E2099041E0060CE04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB16E974209905140060CE04 /* StoreKit.framework */,
+				CB16E972209905070060CE04 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CB8C131F20856F8000E28C2B /* Models */ = {
@@ -237,6 +255,17 @@
 				TargetAttributes = {
 					CB14A9FB207F862B00834626 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -441,6 +470,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PetanqueScore/PetanqueScore.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				INFOPLIST_FILE = PetanqueScore/Info.plist;
@@ -448,8 +479,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BenjaminBudet.PetanqueScore;
+				PRODUCT_BUNDLE_IDENTIFIER = org.epimac.PetanqueScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -459,6 +491,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PetanqueScore/PetanqueScore.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				INFOPLIST_FILE = PetanqueScore/Info.plist;
@@ -466,8 +500,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BenjaminBudet.PetanqueScore;
+				PRODUCT_BUNDLE_IDENTIFIER = org.epimac.PetanqueScore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

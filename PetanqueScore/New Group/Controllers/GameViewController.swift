@@ -52,7 +52,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         limiteScore = gameObject?.victNumber
         equipe1Name = (gameObject?.equipe1Name)!
         equipe2Name = (gameObject?.equipe2Name)!
-        games = NSCodingData.GetGames()!
+        games = NSCodingData.GetGames() ?? []
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
     }
 

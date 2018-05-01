@@ -23,7 +23,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        games = NSCodingData.GetGames()!
+        games = NSCodingData.GetGames() ?? []
         historiqueGames.reloadData()
     }
 
