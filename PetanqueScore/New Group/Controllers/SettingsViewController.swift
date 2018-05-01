@@ -38,25 +38,23 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Mes profils"
-        case 1:
             cell.textLabel?.text = "Supprimer les données"
         default:
-            cell.textLabel?.text = "Autre"
+            cell.textLabel?.text = ""
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1:
+        case 0:
             ImageLoad.removeImage()
             _ = NSCodingData.Save(profiles: [])
             _ = NSCodingData.SaveGame(games: [])
