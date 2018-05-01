@@ -58,6 +58,8 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         equipe1collectionView.restorationIdentifier = "Equipe1"
         Equipe2TextField.delegate = self
         Equipe1TextField.delegate = self
+        Equipe.equipe1 = []
+        Equipe.equipe2 = []
         // Do any additional setup after loading the view.
     }
 

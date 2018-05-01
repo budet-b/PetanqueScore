@@ -36,6 +36,11 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
     @IBOutlet weak var deleteGame: UIButton!
     
     @IBAction func deleteGamePressed(_ sender: Any) {
+        games.remove(at: idGame)
+        if NSCodingData.SaveGame(games: games)
+        {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

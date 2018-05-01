@@ -87,6 +87,14 @@ class ProfilsTVC: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "ProfilDetail") as? ProfilDetailViewController else {
+            return
+        }
+        vc.idPlayer = indexPath.row
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
  
 
     /*

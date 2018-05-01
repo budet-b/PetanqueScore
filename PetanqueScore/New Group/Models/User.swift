@@ -16,6 +16,9 @@ class User: NSObject, NSCoding {
     var firstname: String?
     var lastname: String?
     var imageUrl: NSURL?
+    var nbrVictoire: Int?
+    var bouleDesc: String?
+    var totalGames: Int?
     
     //MARK: Archiving Paths
 
@@ -28,14 +31,20 @@ class User: NSObject, NSCoding {
         static let firstname = "Cfirstname"
         static let lastname = "Clastname"
         static let imageurl = "Cimageurl"
+        static let nbrVictoire = "CnbrVictoire"
+        static let bouleDesc = "CbouleDesc"
+        static let totalGames = "CtotalGames"
     }
     
     //MARK: Initialization
 
-    init(first: String, last: String, url: NSURL) {
+    init(first: String, last: String, url: NSURL, nbrVictoire: Int = 0, bouleDesc: String = "", totalGames: Int = 0) {
         self.firstname = first
         self.lastname = last
         self.imageUrl = url
+        self.bouleDesc = bouleDesc
+        self.nbrVictoire = nbrVictoire
+        self.totalGames = totalGames
     }
     
     //MARK: NSCoding
@@ -44,6 +53,9 @@ class User: NSObject, NSCoding {
         aCoder.encode(firstname, forKey: PropertyKey.firstname)
         aCoder.encode(lastname, forKey: PropertyKey.lastname)
         aCoder.encode(imageUrl?.path, forKey: PropertyKey.imageurl)
+        aCoder.encode(bouleDesc, forKey: PropertyKey.bouleDesc)
+        aCoder.encode(nbrVictoire, forKey: PropertyKey.nbrVictoire)
+        aCoder.encode(totalGames, forKey: PropertyKey.totalGames)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -61,6 +73,9 @@ class User: NSObject, NSCoding {
         {
             url = NSURL(fileURLWithPath: imageurl!)
         }
-        self.init(first: firstname, last: lastname, url: url)
+        let bouleDesc = aDecoder.decodeObject(forKey: PropertyKey.bouleDesc) as? String ?? ""
+        let nbrVict = aDecoder.decodeObject(forKey: PropertyKey.nbrVictoire) as? Int ?? 0
+        let totalGames = aDecoder.decodeObject(forKey: PropertyKey.totalGames) as? Int ?? 0
+        self.init(first: firstname, last: lastname, url: url, nbrVictoire: nbrVict, bouleDesc: bouleDesc, totalGames: totalGames)
     }
 }
