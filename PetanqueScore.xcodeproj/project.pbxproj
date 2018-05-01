@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB00C4142098C72B00400C42 /* GameDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */; };
 		CB14AA00207F862B00834626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14A9FF207F862B00834626 /* AppDelegate.swift */; };
 		CB14AA02207F862B00834626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA01207F862B00834626 /* ViewController.swift */; };
 		CB14AA05207F862B00834626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA03207F862B00834626 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB14A9FC207F862B00834626 /* PetanqueScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetanqueScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB14A9FF207F862B00834626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB14AA01207F862B00834626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				CB6820582087FFA200CB6CDA /* ProfileTableViewCell.swift */,
 				CB2CBF3920894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift */,
 				CBCF39FD20977499001A0B87 /* HistoryGameTableViewCell.swift */,
+				CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */,
 				CB8C132120856F8E00E28C2B /* User.swift in Sources */,
 				CB2CBF3A20894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift in Sources */,
+				CB00C4142098C72B00400C42 /* GameDetailCollectionViewCell.swift in Sources */,
 				CBCF3A002097CA39001A0B87 /* ResumeGameViewController.swift in Sources */,
 				CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */,
 				CB14AA12207FB91A00834626 /* GameViewController.swift in Sources */,

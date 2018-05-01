@@ -8,8 +8,9 @@
 import MapKit
 import UIKit
 
-class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDelegate
- {
+class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource
+{
+
 
     var idGame: Int = 0
     var games: [Game] = []
@@ -25,6 +26,10 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
     override func viewDidLoad() {
         super.viewDidLoad()
         games = NSCodingData.GetGames()!
+        equipe1CollectionView.delegate = self
+        equipe2CollectionView.delegate = self
+        equipe1CollectionView.dataSource = self
+        equipe2CollectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -57,7 +62,50 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
         } else {
             gameLocation.alpha = 0.0
         }
+        equipe1CollectionView.reloadData()
+        equipe2CollectionView.reloadData()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView.restorationIdentifier == "equipe1" {
+            return (games[idGame].equipe1?.count)!
+        } else {
+            return (games[idGame].equipe2?.count)!
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let currentGame = games[idGame]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerDetail", for: indexPath) as! GameDetailCollectionViewCell
+        if collectionView == equipe1CollectionView && collectionView.restorationIdentifier == "equipe1" {
+            do {
+                let img = try ImageLoad.loadImage(fileName: (currentGame.equipe1![indexPath.row].imageUrl?.path)!)
+                cell.playerImg.image = img
+            } catch {
+                cell.playerImg.image = UIImage(named: "profilPlaceholder")
+            }
+            cell.playerImg.layer.masksToBounds = true
+            cell.playerImg.layer.cornerRadius = cell.playerImg.frame.size.width / 2
+            cell.playerImg.clipsToBounds = true
+            cell.playerName.text = currentGame.equipe1![indexPath.row].firstname
+            cell.playerLastName.text = currentGame.equipe1![indexPath.row].lastname
+        } else if collectionView == equipe2CollectionView && collectionView.restorationIdentifier == "equipe2" {
+            do {
+                let img = try ImageLoad.loadImage(fileName: (currentGame.equipe2![indexPath.row].imageUrl?.path)!)
+                cell.playerImg.image = img
+            } catch {
+                cell.playerImg.image = UIImage(named: "profilPlaceholder")
+            }
+            cell.playerImg.layer.masksToBounds = true
+            cell.playerImg.layer.cornerRadius = cell.playerImg.frame.size.width / 2
+            cell.playerImg.clipsToBounds = true
+            cell.playerName.text = currentGame.equipe2![indexPath.row].firstname
+            cell.playerLastName.text = currentGame.equipe2![indexPath.row].lastname
+        }
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

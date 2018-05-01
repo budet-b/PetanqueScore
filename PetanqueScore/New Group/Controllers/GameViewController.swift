@@ -84,15 +84,47 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     func shouldFinishGame(winner: Int) {
         gameObject?.equipe1Score = Int(stepperEquipe1.value)
         gameObject?.equipe2Score = Int(stepperEquipe2.value)
+        let users = NSCodingData.GetProfils()!
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         if (winner == 0)
         {
             alert.title = "Equipe 1 à gagné !"
             alert.message = "Félicitations à \(equipe1Name)"
+            for player in (gameObject?.equipe1)! {
+                for user in users {
+                    if player.firstname == user.firstname && player.lastname == user.lastname {
+                        user.nbrVictoire! += 1
+                    }
+                }
+            }
         } else {
             alert.title = "Equipe 2 à gagné !"
             alert.message = "Félicitations à \(equipe2Name)"
+            for player in (gameObject?.equipe2)! {
+                for user in users {
+                    if player.firstname == user.firstname && player.lastname == user.lastname {
+                        user.nbrVictoire! += 1
+                    }
+                }
+            }
         }
+        
+        for player in (gameObject?.equipe1)! {
+            for user in users {
+                if player.firstname == user.firstname && player.lastname == user.lastname {
+                    user.totalGames! += 1
+                }
+            }
+        }
+
+        for player in (gameObject?.equipe2)! {
+            for user in users {
+                if player.firstname == user.firstname && player.lastname == user.lastname {
+                    user.totalGames! += 1
+                }
+            }
+        }
+        
         alert.addAction(UIAlertAction(title: "Retour au menu", style: .default, handler:
             {
                 (alert) -> Void in self.navigationController?.popToRootViewController(animated: true)
@@ -106,6 +138,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         }
         games.append(gameObject!)
         let val = NSCodingData.SaveGame(games: games)
+        NSCodingData.Save(profiles: users)
         self.present(alert, animated: true)
     }
     
