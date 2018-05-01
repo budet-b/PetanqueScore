@@ -59,6 +59,7 @@ class ProfilDetailViewController: UIViewController {
         } else {
             percentVictory.textColor = UIColor.red
         }
+        bouleDetail.text = curr.bouleDesc
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {

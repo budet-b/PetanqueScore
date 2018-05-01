@@ -44,6 +44,13 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     @IBAction func CreateGame(_ sender: Any) {
+        if (equipe1.isEmpty || (Equipe1TextField.text?.isEmpty)! || equipe2.isEmpty || (Equipe2TextField.text?.isEmpty)!)
+        {
+            let alert = UIAlertController(title: "Erreur dans la création de partie", message: "Merci de renseigner les équipes avec les joueurs et les noms.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "GameController") as? GameViewController else {
             return
         }

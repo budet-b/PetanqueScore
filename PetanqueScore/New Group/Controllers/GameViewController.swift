@@ -16,6 +16,10 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var scoreEquipe2: UILabel!
     @IBOutlet weak var stepperEquipe1: UIStepper!
     @IBOutlet weak var stepperEquipe2: UIStepper!
+    @IBOutlet weak var minuteLabel: UILabel!
+    @IBOutlet weak var secondeLabel: UILabel!
+    
+    
     var limiteScore: Int?
     var equipe1: [User]?
     var equipe2: [User]?
@@ -24,6 +28,9 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
     var equipe2Name: String = ""
     var games: [Game] = []
     let locationManager = CLLocationManager()
+    var count = 0
+    var minute = 0
+    var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +40,8 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         stepperEquipe2.minimumValue = 0.0
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
-
+        minuteLabel.text = "00 :"
+        secondeLabel.text = "00"
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +53,7 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         equipe1Name = (gameObject?.equipe1Name)!
         equipe2Name = (gameObject?.equipe2Name)!
         games = NSCodingData.GetGames()!
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.counter), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,6 +109,26 @@ class GameViewController: UIViewController, CLLocationManagerDelegate {
         self.present(alert, animated: true)
     }
     
+    @objc func counter() {
+        count += 1
+        if count > 9 {
+            secondeLabel.text = "\(count)"
+            if count == 60 {
+                count = 0
+                secondeLabel.text = "00"
+                minute += 1
+                if minute > 9 {
+                    minuteLabel.text = "\(minute) :"
+                }
+                else{
+                    minuteLabel.text = "0\(minute) :"
+                }
+            }
+        }
+        else {
+            secondeLabel.text = "0\(count)"
+        }
+    }
     
     /*
     // MARK: - Navigation

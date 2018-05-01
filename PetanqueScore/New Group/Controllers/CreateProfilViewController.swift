@@ -11,11 +11,14 @@ import UIKit
 class CreateProfilViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var prenomTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nomTextField: UITextField!
+    @IBOutlet weak var bouleDesc: UITextField!
+
     let imagePicker = UIImagePickerController()
     var imagePath = ""
     var numberUser = NSCodingData.GetProfils()?.count ?? 0
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nomTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -25,6 +28,8 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
         nomTextField.delegate = self
         nomTextField.tag = 1
         nomTextField.returnKeyType = .done
+        bouleDesc.delegate = self
+        bouleDesc.text = ""
         // Do any additional setup after loading the view.
     }
 
@@ -43,10 +48,13 @@ class CreateProfilViewController: UIViewController, UIImagePickerControllerDeleg
     @IBAction func confirmButton(_ sender: Any) {
         if (prenomTextField.text?.isEmpty)! || (nomTextField.text?.isEmpty)!
         {
-            confirmButton.isEnabled = false
+            let alert = UIAlertController(title: "Erreur dans la création de profil", message: "Merci de renseigner les champs Prénom et Nom.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
         }
         let url = NSURL(fileURLWithPath: imagePath)
-        let user = User(first: prenomTextField.text!, last: nomTextField.text!, url: url)
+        let user = User(first: prenomTextField.text!, last: nomTextField.text!, url: url, bouleDesc: bouleDesc.text!)
         print(imagePath)
         // On get l'ensemble des profils
         var curr = NSCodingData.GetProfils()
