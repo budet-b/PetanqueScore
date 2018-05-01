@@ -17,6 +17,7 @@ class ProfilDetailViewController: UIViewController {
     
     @IBOutlet weak var nbrGames: UILabel!
     @IBOutlet weak var percentVictory: UILabel!
+    @IBOutlet weak var lastnameLabel: UILabel!
     
     @IBOutlet weak var bouleDetail: UILabel!
     
@@ -45,6 +46,7 @@ class ProfilDetailViewController: UIViewController {
         imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
         imageUser.clipsToBounds = true
         nbrGames.text = String(curr.totalGames!)
+        lastnameLabel.text = curr.lastname
         var percentVict = 0
         if curr.totalGames == 0 {
             percentVict = 0
@@ -59,7 +61,13 @@ class ProfilDetailViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var deleteButtonPressed: UIButton!
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        players.remove(at: idPlayer)
+        let res = NSCodingData.Save(profiles: players)
+        if (res) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
     
     /*
     // MARK: - Navigation
