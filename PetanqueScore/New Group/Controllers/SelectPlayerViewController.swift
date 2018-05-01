@@ -74,11 +74,24 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableV", for: indexPath) as! SelectPlayerTableViewCell
-        cell.userName.text = data[indexPath.row].firstname
-        cell.userVic.text = "12 victoires"
-        cell.userPercent.text = "30%"
+        let curr = data[indexPath.row]
+        cell.userName.text = curr.firstname
+        var percentVict: Double = 0
+        if curr.totalGames == 0 {
+            percentVict = 0
+        } else {
+            percentVict = Double(curr.nbrVictoire!) / Double(curr.totalGames!)
+        }
+        cell.userPercent.text = String("\(percentVict * 100) %")
+        cell.userVic.text = String(curr.nbrVictoire!)
+        if percentVict > (50 / 100) {
+            cell.userPercent.textColor = UIColor.green
+        } else {
+            cell.userPercent.textColor = UIColor.red
+        }
         do {
             let img = try ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
+            cell.userImg.image = img
         } catch {
             cell.userImg.image = UIImage(named: "profilPlaceholder")
         }

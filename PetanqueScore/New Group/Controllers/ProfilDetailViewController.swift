@@ -47,14 +47,14 @@ class ProfilDetailViewController: UIViewController {
         imageUser.clipsToBounds = true
         nbrGames.text = String(curr.totalGames!)
         lastnameLabel.text = curr.lastname
-        var percentVict = 0
+        var percentVict: Double = 0
         if curr.totalGames == 0 {
             percentVict = 0
         } else {
-            percentVict = curr.nbrVictoire! / curr.totalGames!
+            percentVict = Double(curr.nbrVictoire!) / Double(curr.totalGames!)
         }
-        percentVictory.text = String(percentVict * 100)
-        if percentVict > 50 {
+        percentVictory.text = String("\(percentVict * 100) %")
+        if percentVict > (50 / 100) {
             percentVictory.textColor = UIColor.green
         } else {
             percentVictory.textColor = UIColor.red
