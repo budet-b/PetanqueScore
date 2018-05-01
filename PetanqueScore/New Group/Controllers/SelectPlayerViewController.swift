@@ -45,28 +45,6 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "NewGame" {
-//            if let vc = segue.destination as? NewGameViewController {
-//                guard let tmp = UserDefaults.standard.string(forKey: "Equipe") else {
-//                    return
-//                }
-//                if tmp == "Equipe1" {
-//                    Equipe.equipe1 = selectedPlayer
-//                    vc.equipe1 = selectedPlayer
-//                }
-//                else if tmp == "Equipe2" {
-//                    Equipe.equipe2 = selectedPlayer
-//                    vc.equipe2 = selectedPlayer
-//                }
-//            }
-//        }
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
- 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -106,9 +84,11 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
         cell.accessoryType = .none
         cell.backgroundColor = UIColor.white
         var i = 0
-        for item in data {
-            if item == data[indexPath.row] {
+        for player in selectedPlayer {
+            if player.firstname! == data[indexPath.row].firstname &&
+                player.lastname! == data[indexPath.row].lastname {
                 selectedPlayer.remove(at: i)
+                return
             }
             i += 1
         }
