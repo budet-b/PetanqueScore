@@ -16,7 +16,7 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     var selectedPlayer: [User] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = NSCodingData.GetProfils()!
+        data = NSCodingData.GetProfils() ?? []
 
         // Do any additional setup after loading the view.
     }

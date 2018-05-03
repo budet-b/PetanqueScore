@@ -37,8 +37,13 @@ class ProfilDetailViewController: UIViewController {
         players = NSCodingData.GetProfils()!
         let curr = players[idPlayer]
         nameLabel.text = curr.firstname
-        if let img = ImageLoad.loadImage(fileName: (curr.imageUrl?.path)!) {
-            imageUser.image = img
+        let urlImg = curr.imageUrl?.path
+        if urlImg != nil {
+            if let img = ImageLoad.loadImage(fileName: urlImg!) {
+                imageUser.image = img
+            } else {
+                imageUser.image = UIImage(named: "profilPlaceholder")
+            }
         } else {
             imageUser.image = UIImage(named: "profilPlaceholder")
         }
