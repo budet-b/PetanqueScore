@@ -68,8 +68,12 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
             cell.userPercent.textColor = UIColor.red
         }
         do {
-            let img = try ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
-            cell.userImg.image = img
+            if ((data[indexPath.row].imageUrl) != nil) {
+                let img = try ImageLoad.loadImage(fileName: (data[indexPath.row].imageUrl?.path)!)
+                cell.userImg.image = img
+            } else {
+                cell.userImg.image = UIImage(named: "profilPlaceholder")
+            }
         } catch {
             cell.userImg.image = UIImage(named: "profilPlaceholder")
         }

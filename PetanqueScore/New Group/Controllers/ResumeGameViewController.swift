@@ -79,8 +79,12 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerDetail", for: indexPath) as! GameDetailCollectionViewCell
         if collectionView == equipe1CollectionView && collectionView.restorationIdentifier == "equipe1" {
             do {
-                let img = try ImageLoad.loadImage(fileName: (currentGame.equipe1![indexPath.row].imageUrl?.path)!)
-                cell.playerImg.image = img
+                if ((currentGame.equipe1![indexPath.row].imageUrl) != nil) {
+                    let img = try ImageLoad.loadImage(fileName: (currentGame.equipe1![indexPath.row].imageUrl?.path)!)
+                    cell.playerImg.image = img
+                } else {
+                    cell.playerImg.image = UIImage(named: "profilPlaceholder")
+                }
             } catch {
                 cell.playerImg.image = UIImage(named: "profilPlaceholder")
             }
@@ -91,8 +95,12 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
             cell.playerLastName.text = currentGame.equipe1![indexPath.row].lastname
         } else if collectionView == equipe2CollectionView && collectionView.restorationIdentifier == "equipe2" {
             do {
-                let img = try ImageLoad.loadImage(fileName: (currentGame.equipe2![indexPath.row].imageUrl?.path)!)
-                cell.playerImg.image = img
+                if ((currentGame.equipe2![indexPath.row].imageUrl) != nil) {
+                    let img = try ImageLoad.loadImage(fileName: (currentGame.equipe2![indexPath.row].imageUrl?.path)!)
+                    cell.playerImg.image = img
+                } else {
+                    cell.playerImg.image = UIImage(named: "profilPlaceholder")
+                }
             } catch {
                 cell.playerImg.image = UIImage(named: "profilPlaceholder")
             }

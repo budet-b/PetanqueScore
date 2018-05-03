@@ -98,10 +98,14 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         if collectionView == equipe1collectionView {
             if collectionView.restorationIdentifier == "Equipe1" {
                 equipe1 = Equipe.equipe1
-                let img = ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
-                if (img != nil) {
-                    cell.userImg.image = img
-                } else {
+                do {
+                    if ((equipe1[indexPath.row].imageUrl) != nil) {
+                        let img = try ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
+                        cell.userImg.image = img
+                    } else {
+                        cell.userImg.image = UIImage(named: "profilPlaceholder")
+                    }
+                } catch {
                     cell.userImg.image = UIImage(named: "profilPlaceholder")
                 }
                 cell.userImg.layer.masksToBounds = true
@@ -112,10 +116,14 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         }
         else if collectionView == equipe2collectionView {
             equipe2 = Equipe.equipe2
-            let img = ImageLoad.loadImage(fileName: (equipe2[indexPath.row].imageUrl?.path)!)
-            if (img != nil) {
-                cell.userImg.image = img
-            } else {
+            do {
+                if ((equipe2[indexPath.row].imageUrl) != nil) {
+                    let img = try ImageLoad.loadImage(fileName: (equipe2[indexPath.row].imageUrl?.path)!)
+                    cell.userImg.image = img
+                } else {
+                    cell.userImg.image = UIImage(named: "profilPlaceholder")
+                }
+            } catch {
                 cell.userImg.image = UIImage(named: "profilPlaceholder")
             }
             cell.userImg.layer.masksToBounds = true
