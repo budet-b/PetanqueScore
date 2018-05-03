@@ -9,6 +9,8 @@
 import UIKit
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var newGameOutlet: UIButton!
+    @IBOutlet weak var profilesButtonOutlet: UIButton!
     
     @IBOutlet weak var historiqueGames: UITableView!
     var games: [Game] = []
@@ -18,6 +20,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         historiqueGames.dataSource = self
         historiqueGames.delegate = self
         // Do any additional setup after loading the view.
+        profilesButtonOutlet.layer.cornerRadius = 10
+        profilesButtonOutlet.layer.borderWidth = 1
+
+        newGameOutlet.layer.cornerRadius = 10
+        newGameOutlet.layer.borderWidth = 1
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
