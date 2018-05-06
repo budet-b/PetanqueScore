@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB00C4142098C72B00400C42 /* GameDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */; };
+		CB0F8412209F9837003D6E7C /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0F8411209F9837003D6E7C /* Competition.swift */; };
 		CB14AA00207F862B00834626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14A9FF207F862B00834626 /* AppDelegate.swift */; };
 		CB14AA02207F862B00834626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA01207F862B00834626 /* ViewController.swift */; };
 		CB14AA05207F862B00834626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB14AA03207F862B00834626 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB0F8411209F9837003D6E7C /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		CB14A9FC207F862B00834626 /* PetanqueScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetanqueScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB14A9FF207F862B00834626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB14AA01207F862B00834626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				CBD9195420879E3A0059A2C7 /* Images.swift */,
 				CB2CBF3B208DC6C100419070 /* Equipe.swift */,
+				CB0F8411209F9837003D6E7C /* Competition.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				CB8C132720867CA400E28C2B /* DashboardViewController.swift in Sources */,
 				CB8C132E2087542B00E28C2B /* SettingsViewController.swift in Sources */,
 				CB2CBF3820893AAD00419070 /* Game.swift in Sources */,
+				CB0F8412209F9837003D6E7C /* Competition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

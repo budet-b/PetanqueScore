@@ -72,8 +72,9 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "GameController") as? GameViewController else {
             return
         }
+        let compet = competitionPicker.selectedRow(inComponent: 0)
         let maxScore = Int(limiteScore.titleForSegment(at: limiteScore.selectedSegmentIndex)!)
-        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!, equipe1Score: 0, equipe2Score: 0, longitude: nil, latitude: nil)
+        let newGame = Game(equipe1: equipe1, equipe2: equipe2, victNumber: maxScore!, equipe1Name: Equipe1TextField.text!, equipe2Name: Equipe2TextField.text!, equipe1Score: 0, equipe2Score: 0, longitude: nil, latitude: nil, competiton: compet)
         vc.gameObject = newGame
         navigationController?.pushViewController(vc, animated: true)
     }
