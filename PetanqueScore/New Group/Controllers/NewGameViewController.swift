@@ -8,8 +8,24 @@
 
 import UIKit
 
-class NewGameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NewGameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return competitions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        competitionPicker.tintColor = UIColor.white
+        return competitions[row]
+    }
+    
+    
+    @IBOutlet weak var competitionPicker: UIPickerView!
+    
+    @IBOutlet weak var lieuTextField: UITextField!
     // TextFields
     @IBOutlet weak var Equipe2TextField: UITextField!
     @IBOutlet weak var Equipe1TextField: UITextField!
@@ -19,6 +35,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     var data: [User]?
     var equipe1: [User] = []
     var equipe2: [User] = []
+    var competitions: [String] = ["Amical", "Pro"]
     
     @IBOutlet weak var limiteScore: UISegmentedControl!
     @IBOutlet weak var selectFirstTeam: UIButton!
@@ -61,12 +78,20 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        data = NSCodingData.GetProfils()
-//        equipe1collectionView.restorationIdentifier = "Equipe1"
-//        Equipe2TextField.delegate = self
-//        Equipe1TextField.delegate = self
+        data = NSCodingData.GetProfils()
+        equipe1collectionView.restorationIdentifier = "Equipe1"
+        Equipe2TextField.delegate = self
+        Equipe1TextField.delegate = self
         Equipe.equipe1 = []
         Equipe.equipe2 = []
+        equipe1collectionView.delegate = self
+        equipe1collectionView.dataSource = self
+        equipe2collectionView.delegate = self
+        equipe2collectionView.dataSource = self
+        competitionPicker.dataSource = self
+        competitionPicker.delegate = self
+        competitionPicker.tintColor = UIColor.white
+        competitionPicker.backgroundColor = .red
         // Do any additional setup after loading the view.
     }
 
@@ -78,10 +103,10 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-//        equipe1 = Equipe.equipe1
-//        equipe2 = Equipe.equipe2
-//        equipe1collectionView.reloadData()
-//        equipe2collectionView.reloadData()
+        equipe1 = Equipe.equipe1
+        equipe2 = Equipe.equipe2
+        equipe1collectionView.reloadData()
+        equipe2collectionView.reloadData()
     }
     
     
@@ -100,8 +125,11 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
                 equipe1 = Equipe.equipe1
                 do {
                     if ((equipe1[indexPath.row].imageUrl) != nil) {
-                        let img = try ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!)
-                        cell.userImg.image = img
+                        if let img = try ImageLoad.loadImage(fileName: (equipe1[indexPath.row].imageUrl?.path)!) {
+                            cell.userImg.image = img
+                        } else {
+                            cell.userImg.image = UIImage(named: "profilPlaceholder")
+                        }
                     } else {
                         cell.userImg.image = UIImage(named: "profilPlaceholder")
                     }
