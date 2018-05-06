@@ -17,9 +17,10 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         return competitions.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        competitionPicker.tintColor = UIColor.white
-        return competitions[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: competitions[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        
+        return attributedString
     }
     
     
@@ -90,8 +91,6 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         equipe2collectionView.dataSource = self
         competitionPicker.dataSource = self
         competitionPicker.delegate = self
-        competitionPicker.tintColor = UIColor.white
-        competitionPicker.backgroundColor = .red
         // Do any additional setup after loading the view.
     }
 

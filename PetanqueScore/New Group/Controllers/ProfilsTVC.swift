@@ -16,6 +16,7 @@ class ProfilsTVC: UITableViewController {
         super.viewDidLoad()
         data = NSCodingData.GetProfils() ?? []
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

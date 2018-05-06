@@ -17,6 +17,7 @@ class SelectPlayerViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         data = NSCodingData.GetProfils() ?? []
+        tableViewPlayers.tableFooterView = UIView()
 
         // Do any additional setup after loading the view.
     }
