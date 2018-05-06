@@ -36,7 +36,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     var data: [User]?
     var equipe1: [User] = []
     var equipe2: [User] = []
-    var competitions: [String] = ["Amical", "Pro"]
+    var competitions: [String] = ["Championnat", "Concours Officiel", "Concours Sauvage", "Partie d'interêt", "Entre amis"]
     
     @IBOutlet weak var limiteScore: UISegmentedControl!
     @IBOutlet weak var selectFirstTeam: UIButton!
