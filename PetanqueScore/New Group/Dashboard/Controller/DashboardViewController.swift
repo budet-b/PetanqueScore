@@ -32,6 +32,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewWillAppear(true)
         
         games = NSCodingData.GetGames() ?? []
+        historiqueGames.tableFooterView = UIView()
         historiqueGames.reloadData()
     }
 

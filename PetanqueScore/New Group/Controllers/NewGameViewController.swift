@@ -61,10 +61,10 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = NSCodingData.GetProfils()
-        equipe1collectionView.restorationIdentifier = "Equipe1"
-        Equipe2TextField.delegate = self
-        Equipe1TextField.delegate = self
+//        data = NSCodingData.GetProfils()
+//        equipe1collectionView.restorationIdentifier = "Equipe1"
+//        Equipe2TextField.delegate = self
+//        Equipe1TextField.delegate = self
         Equipe.equipe1 = []
         Equipe.equipe2 = []
         // Do any additional setup after loading the view.
@@ -78,10 +78,10 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        equipe1 = Equipe.equipe1
-        equipe2 = Equipe.equipe2
-        equipe1collectionView.reloadData()
-        equipe2collectionView.reloadData()
+//        equipe1 = Equipe.equipe1
+//        equipe2 = Equipe.equipe2
+//        equipe1collectionView.reloadData()
+//        equipe2collectionView.reloadData()
     }
     
     
