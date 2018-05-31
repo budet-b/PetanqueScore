@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CB00C4142098C72B00400C42 /* GameDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */; };
+		CB02E94220BF1CC100F96218 /* detailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB02E94120BF1CC100F96218 /* detailsCollectionView.swift */; };
+		CB02E94420BFEF5000F96218 /* ProfilDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB02E94320BFEF5000F96218 /* ProfilDetailCollectionViewCell.swift */; };
 		CB0F8412209F9837003D6E7C /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0F8411209F9837003D6E7C /* Competition.swift */; };
 		CB14AA00207F862B00834626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14A9FF207F862B00834626 /* AppDelegate.swift */; };
 		CB14AA02207F862B00834626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AA01207F862B00834626 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		CB00C4132098C72B00400C42 /* GameDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB02E94120BF1CC100F96218 /* detailsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = detailsCollectionView.swift; path = "PetanqueScore/New Group/Layout/CollectionView/detailsCollectionView.swift"; sourceTree = SOURCE_ROOT; };
+		CB02E94320BFEF5000F96218 /* ProfilDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilDetailCollectionViewCell.swift; path = "PetanqueScore/New Group/Layout/Cell/ProfilDetailCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		CB0F8411209F9837003D6E7C /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		CB14A9FC207F862B00834626 /* PetanqueScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetanqueScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB14A9FF207F862B00834626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				CB8C132620867CA400E28C2B /* DashboardViewController.swift */,
+				CB02E94120BF1CC100F96218 /* detailsCollectionView.swift */,
+				CB02E94320BFEF5000F96218 /* ProfilDetailCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			files = (
 				CB14AA02207F862B00834626 /* ViewController.swift in Sources */,
 				CB41622120809EA8005A7773 /* NewGameViewController.swift in Sources */,
+				CB02E94420BFEF5000F96218 /* ProfilDetailCollectionViewCell.swift in Sources */,
 				CB6820572087E2C600CB6CDA /* SelectPlayerTableViewCell.swift in Sources */,
 				CBCF39FE20977499001A0B87 /* HistoryGameTableViewCell.swift in Sources */,
 				CB6820592087FFA200CB6CDA /* ProfileTableViewCell.swift in Sources */,
@@ -319,6 +326,7 @@
 				CB8C133020875A4E00E28C2B /* ProfilsTVC.swift in Sources */,
 				CB8C132120856F8E00E28C2B /* User.swift in Sources */,
 				CB2CBF3A20894E5300419070 /* ProfilSelectedGameCollectionViewCell.swift in Sources */,
+				CB02E94220BF1CC100F96218 /* detailsCollectionView.swift in Sources */,
 				CB00C4142098C72B00400C42 /* GameDetailCollectionViewCell.swift in Sources */,
 				CBCF3A002097CA39001A0B87 /* ResumeGameViewController.swift in Sources */,
 				CB8C131E20856B6900E28C2B /* CreateProfilViewController.swift in Sources */,
