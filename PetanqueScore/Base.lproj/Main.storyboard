@@ -206,7 +206,7 @@
                                 <color key="separatorColor" red="0.1843137255" green="0.83529411760000005" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryGameCell" rowHeight="60" id="eZa-T6-Q8a" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryGameCell" rowHeight="60" id="eZa-T6-Q8a" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZa-T6-Q8a" id="MCi-il-PdE">
@@ -904,7 +904,7 @@
                                 <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableV" rowHeight="116" id="98A-DP-A6D" customClass="SelectPlayerTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableV" rowHeight="116" id="98A-DP-A6D" customClass="SelectPlayerTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="98A-DP-A6D" id="Tjc-B1-D9V">
@@ -1166,12 +1166,61 @@
                                                             <rect key="frame" x="8" y="141" width="302" height="243"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ek2-Na-xXZ" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryGameCell" id="Ek2-Na-xXZ" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28" width="302" height="44"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ek2-Na-xXZ" id="NMx-cO-sVl">
                                                                         <rect key="frame" x="0.0" y="0.0" width="302" height="43.666666666666664"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wg-r1-wOT">
+                                                                                <rect key="frame" x="147" y="3" width="8" height="37"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TeamName2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYh-x8-q6r">
+                                                                                <rect key="frame" x="190" y="3" width="106" height="37"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUD-4r-IDh">
+                                                                                <rect key="frame" x="164" y="3" width="18" height="37"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WY-Vw-HyX">
+                                                                                <rect key="frame" x="117.33333333333331" y="3" width="23" height="37"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TeamName1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT3-Oq-C4L">
+                                                                                <rect key="frame" x="6" y="3" width="103.33333333333333" height="37"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="bottom" secondItem="SUD-4r-IDh" secondAttribute="bottom" constant="3" id="3qs-wo-Mad"/>
+                                                                            <constraint firstItem="YYh-x8-q6r" firstAttribute="top" secondItem="NMx-cO-sVl" secondAttribute="top" constant="3" id="5b4-39-FGq"/>
+                                                                            <constraint firstItem="0WY-Vw-HyX" firstAttribute="top" secondItem="NMx-cO-sVl" secondAttribute="top" constant="3" id="91L-3v-PIt"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="2wg-r1-wOT" secondAttribute="bottom" constant="3" id="97M-Mc-nEf"/>
+                                                                            <constraint firstItem="SUD-4r-IDh" firstAttribute="top" secondItem="NMx-cO-sVl" secondAttribute="top" constant="3" id="FVZ-ch-tdF"/>
+                                                                            <constraint firstItem="2wg-r1-wOT" firstAttribute="centerX" secondItem="NMx-cO-sVl" secondAttribute="centerX" id="HSW-0b-ZCY"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="PT3-Oq-C4L" secondAttribute="bottom" constant="3" id="JU4-TS-yjW"/>
+                                                                            <constraint firstItem="YYh-x8-q6r" firstAttribute="leading" secondItem="SUD-4r-IDh" secondAttribute="trailing" constant="8" id="LqV-A6-5TP"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="0WY-Vw-HyX" secondAttribute="bottom" constant="3" id="VzS-ot-ihD"/>
+                                                                            <constraint firstItem="PT3-Oq-C4L" firstAttribute="leading" secondItem="NMx-cO-sVl" secondAttribute="leading" constant="6" id="ate-bR-c1H"/>
+                                                                            <constraint firstItem="0WY-Vw-HyX" firstAttribute="leading" secondItem="PT3-Oq-C4L" secondAttribute="trailing" constant="8" id="ez9-o1-IGs"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="YYh-x8-q6r" secondAttribute="trailing" constant="6" id="hid-0v-R7U"/>
+                                                                            <constraint firstItem="PT3-Oq-C4L" firstAttribute="top" secondItem="NMx-cO-sVl" secondAttribute="top" constant="3" id="lkM-c7-a2p"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="YYh-x8-q6r" secondAttribute="bottom" constant="3" id="pQr-Ta-2Ev"/>
+                                                                            <constraint firstItem="2wg-r1-wOT" firstAttribute="top" secondItem="NMx-cO-sVl" secondAttribute="top" constant="3" id="zQ1-Df-3ti"/>
+                                                                        </constraints>
                                                                     </tableViewCellContentView>
                                                                 </tableViewCell>
                                                             </prototypes>
@@ -1215,410 +1264,6 @@
                                             <outlet property="profilView" destination="ov3-im-JZ3" id="ofk-Gz-XL8"/>
                                             <outlet property="victoryNumber" destination="hUD-f4-ig8" id="zF1-OD-uCx"/>
                                             <outlet property="victoryPercent" destination="BFN-m0-KP0" id="VPn-Wv-hjr"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="champ2" id="zGp-Oc-nB8" customClass="ProfilDetailCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                        <rect key="frame" x="344" y="79" width="334" height="400"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="400"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFV-3U-pvB">
-                                                    <rect key="frame" x="16" y="0.0" width="302" height="366"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champ_name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyT-MH-nj0">
-                                                            <rect key="frame" x="16" y="10" width="270" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nombre de parties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWe-Tj-JL8">
-                                                            <rect key="frame" x="15" y="60" width="204" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victoires" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euI-MZ-sXD">
-                                                            <rect key="frame" x="219" y="60" width="67" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtV-dt-EFe">
-                                                            <rect key="frame" x="16" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-pI-P8C">
-                                                            <rect key="frame" x="182" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7H-1N-Il4">
-                                                            <rect key="frame" x="243" y="88" width="43" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-so-SIY">
-                                                            <rect key="frame" x="8" y="141" width="286" height="217"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EzH-Gk-eRc" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28" width="286" height="44"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EzH-Gk-eRc" id="bCN-Wj-AmN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="43.666666666666664"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </tableViewCellContentView>
-                                                                </tableViewCell>
-                                                            </prototypes>
-                                                        </tableView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="gyT-MH-nj0" firstAttribute="top" secondItem="QFV-3U-pvB" secondAttribute="top" constant="10" id="3cS-51-RxJ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="euI-MZ-sXD" secondAttribute="trailing" constant="16" id="ALY-5s-up4"/>
-                                                        <constraint firstAttribute="trailing" secondItem="c7H-1N-Il4" secondAttribute="trailing" constant="16" id="MBj-Lp-fFA"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Zlf-so-SIY" secondAttribute="bottom" constant="8" id="Osc-A0-pwN"/>
-                                                        <constraint firstItem="cWe-Tj-JL8" firstAttribute="top" secondItem="gyT-MH-nj0" secondAttribute="bottom" constant="26" id="QAI-Ch-At0"/>
-                                                        <constraint firstItem="ZtV-dt-EFe" firstAttribute="top" secondItem="cWe-Tj-JL8" secondAttribute="bottom" constant="8" id="Qm5-D0-LKX"/>
-                                                        <constraint firstItem="c7H-1N-Il4" firstAttribute="top" secondItem="euI-MZ-sXD" secondAttribute="bottom" constant="7" id="RVi-0E-p6Q"/>
-                                                        <constraint firstItem="gyT-MH-nj0" firstAttribute="leading" secondItem="QFV-3U-pvB" secondAttribute="leading" constant="16" id="Tgs-1J-3Sh"/>
-                                                        <constraint firstItem="mJj-pI-P8C" firstAttribute="top" secondItem="euI-MZ-sXD" secondAttribute="bottom" constant="8" id="Znv-8C-SoP"/>
-                                                        <constraint firstItem="cWe-Tj-JL8" firstAttribute="leading" secondItem="QFV-3U-pvB" secondAttribute="leading" constant="15" id="eqf-EF-uJm"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Zlf-so-SIY" secondAttribute="trailing" constant="8" id="fyk-qX-QLE"/>
-                                                        <constraint firstItem="euI-MZ-sXD" firstAttribute="top" secondItem="gyT-MH-nj0" secondAttribute="bottom" constant="26" id="hZs-dW-sjl"/>
-                                                        <constraint firstItem="Zlf-so-SIY" firstAttribute="leading" secondItem="QFV-3U-pvB" secondAttribute="leading" constant="8" id="iVR-NM-E4H"/>
-                                                        <constraint firstItem="euI-MZ-sXD" firstAttribute="leading" secondItem="cWe-Tj-JL8" secondAttribute="trailing" id="iW1-9u-ybp"/>
-                                                        <constraint firstItem="c7H-1N-Il4" firstAttribute="leading" secondItem="mJj-pI-P8C" secondAttribute="trailing" constant="43" id="nU3-8L-Osa"/>
-                                                        <constraint firstItem="Zlf-so-SIY" firstAttribute="top" secondItem="ZtV-dt-EFe" secondAttribute="bottom" constant="31" id="oAz-e9-HuI"/>
-                                                        <constraint firstItem="ZtV-dt-EFe" firstAttribute="leading" secondItem="QFV-3U-pvB" secondAttribute="leading" constant="16" id="qA2-58-hrd"/>
-                                                        <constraint firstAttribute="trailing" secondItem="gyT-MH-nj0" secondAttribute="trailing" constant="16" id="zpm-Aw-ASj"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="QFV-3U-pvB" secondAttribute="bottom" id="CXQ-RJ-BYd"/>
-                                            <constraint firstItem="QFV-3U-pvB" firstAttribute="top" secondItem="zGp-Oc-nB8" secondAttribute="top" id="UoU-AC-T7x"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="QFV-3U-pvB" secondAttribute="trailing" id="gcM-Z2-h8F"/>
-                                            <constraint firstItem="QFV-3U-pvB" firstAttribute="leading" secondItem="zGp-Oc-nB8" secondAttribute="leadingMargin" id="oZF-ZX-el7"/>
-                                        </constraints>
-                                        <size key="customSize" width="334" height="400"/>
-                                        <connections>
-                                            <outlet property="champName" destination="gyT-MH-nj0" id="sYK-uh-RrW"/>
-                                            <outlet property="historyTableView" destination="Zlf-so-SIY" id="7zm-sQ-lXc"/>
-                                            <outlet property="nbrGames" destination="ZtV-dt-EFe" id="tv7-TG-P9O"/>
-                                            <outlet property="profilView" destination="QFV-3U-pvB" id="Pjm-Sd-f3j"/>
-                                            <outlet property="victoryNumber" destination="mJj-pI-P8C" id="O5E-8i-ffW"/>
-                                            <outlet property="victoryPercent" destination="c7H-1N-Il4" id="jmN-kF-Ab4"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="champ3" id="TUc-AO-Uk9" customClass="ProfilDetailCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                        <rect key="frame" x="688" y="79" width="334" height="400"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="400"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFO-nM-bkr">
-                                                    <rect key="frame" x="16" y="0.0" width="302" height="366"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champ_name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJs-b4-7kJ">
-                                                            <rect key="frame" x="16" y="10" width="270" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nombre de parties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGg-kd-kK5">
-                                                            <rect key="frame" x="15" y="60" width="204" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victoires" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVu-oL-Esz">
-                                                            <rect key="frame" x="219" y="60" width="67" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Rp-nfc">
-                                                            <rect key="frame" x="16" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEz-Z6-x9N">
-                                                            <rect key="frame" x="182" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xD-ct-QHd">
-                                                            <rect key="frame" x="243" y="88" width="43" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTe-fc-8WH">
-                                                            <rect key="frame" x="8" y="141" width="286" height="217"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="U3g-at-anC" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28" width="286" height="44"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U3g-at-anC" id="HTJ-uk-9Y8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="43.666666666666664"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </tableViewCellContentView>
-                                                                </tableViewCell>
-                                                            </prototypes>
-                                                        </tableView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="jJs-b4-7kJ" secondAttribute="trailing" constant="16" id="1G3-5c-GNS"/>
-                                                        <constraint firstAttribute="trailing" secondItem="QVu-oL-Esz" secondAttribute="trailing" constant="16" id="1pL-dM-Rpv"/>
-                                                        <constraint firstItem="QVu-oL-Esz" firstAttribute="top" secondItem="jJs-b4-7kJ" secondAttribute="bottom" constant="26" id="5LJ-DH-anR"/>
-                                                        <constraint firstItem="uGg-kd-kK5" firstAttribute="leading" secondItem="SFO-nM-bkr" secondAttribute="leading" constant="15" id="5gH-he-ldv"/>
-                                                        <constraint firstItem="jJs-b4-7kJ" firstAttribute="leading" secondItem="SFO-nM-bkr" secondAttribute="leading" constant="16" id="7am-9N-bPB"/>
-                                                        <constraint firstItem="jJs-b4-7kJ" firstAttribute="top" secondItem="SFO-nM-bkr" secondAttribute="top" constant="10" id="DA0-1D-Y3f"/>
-                                                        <constraint firstItem="5xD-ct-QHd" firstAttribute="top" secondItem="QVu-oL-Esz" secondAttribute="bottom" constant="7" id="E1L-us-omF"/>
-                                                        <constraint firstItem="eTe-fc-8WH" firstAttribute="leading" secondItem="SFO-nM-bkr" secondAttribute="leading" constant="8" id="HxK-VT-gW1"/>
-                                                        <constraint firstItem="QVu-oL-Esz" firstAttribute="leading" secondItem="uGg-kd-kK5" secondAttribute="trailing" id="Lgh-VJ-Mp6"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eTe-fc-8WH" secondAttribute="trailing" constant="8" id="Lrg-UK-JEA"/>
-                                                        <constraint firstItem="eTe-fc-8WH" firstAttribute="top" secondItem="9lU-Rp-nfc" secondAttribute="bottom" constant="31" id="QJI-Se-tGG"/>
-                                                        <constraint firstItem="5xD-ct-QHd" firstAttribute="leading" secondItem="JEz-Z6-x9N" secondAttribute="trailing" constant="43" id="QeS-Rs-5Hi"/>
-                                                        <constraint firstItem="9lU-Rp-nfc" firstAttribute="leading" secondItem="SFO-nM-bkr" secondAttribute="leading" constant="16" id="QpZ-d7-NW4"/>
-                                                        <constraint firstAttribute="trailing" secondItem="5xD-ct-QHd" secondAttribute="trailing" constant="16" id="UUe-xn-Uqy"/>
-                                                        <constraint firstItem="9lU-Rp-nfc" firstAttribute="top" secondItem="uGg-kd-kK5" secondAttribute="bottom" constant="8" id="ZDW-Yp-nqC"/>
-                                                        <constraint firstItem="uGg-kd-kK5" firstAttribute="top" secondItem="jJs-b4-7kJ" secondAttribute="bottom" constant="26" id="uOq-3d-EXK"/>
-                                                        <constraint firstItem="JEz-Z6-x9N" firstAttribute="top" secondItem="QVu-oL-Esz" secondAttribute="bottom" constant="8" id="vvk-AS-M9u"/>
-                                                        <constraint firstAttribute="bottom" secondItem="eTe-fc-8WH" secondAttribute="bottom" constant="8" id="wTT-Qi-iKW"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="SFO-nM-bkr" firstAttribute="top" secondItem="TUc-AO-Uk9" secondAttribute="top" id="UPx-qg-8TC"/>
-                                            <constraint firstItem="SFO-nM-bkr" firstAttribute="leading" secondItem="TUc-AO-Uk9" secondAttribute="leadingMargin" id="WF1-SR-XC9"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="SFO-nM-bkr" secondAttribute="bottom" id="rM8-D3-0G1"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="SFO-nM-bkr" secondAttribute="trailing" id="rrz-zT-UhE"/>
-                                        </constraints>
-                                        <size key="customSize" width="334" height="400"/>
-                                        <connections>
-                                            <outlet property="champName" destination="jJs-b4-7kJ" id="sFR-Mu-ywI"/>
-                                            <outlet property="historyTableView" destination="eTe-fc-8WH" id="a0D-r9-3Uo"/>
-                                            <outlet property="nbrGames" destination="9lU-Rp-nfc" id="5po-jI-bN7"/>
-                                            <outlet property="profilView" destination="SFO-nM-bkr" id="i1m-Ww-rIw"/>
-                                            <outlet property="victoryNumber" destination="JEz-Z6-x9N" id="dwf-B4-sxB"/>
-                                            <outlet property="victoryPercent" destination="5xD-ct-QHd" id="VtE-Mt-iSK"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="champ4" id="kWL-IY-WUW" customClass="ProfilDetailCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                        <rect key="frame" x="1032" y="79" width="334" height="400"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="400"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GyM-bZ-OtB">
-                                                    <rect key="frame" x="16" y="0.0" width="302" height="366"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champ_name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRS-pN-iDu">
-                                                            <rect key="frame" x="16" y="10" width="270" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nombre de parties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-dK-rPG">
-                                                            <rect key="frame" x="15" y="60" width="204" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victoires" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-4T-IE8">
-                                                            <rect key="frame" x="219" y="60" width="67" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORV-iV-HJ2">
-                                                            <rect key="frame" x="16" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aby-iP-onH">
-                                                            <rect key="frame" x="182" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdU-JA-ei0">
-                                                            <rect key="frame" x="243" y="88" width="43" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tp2-fl-0uN">
-                                                            <rect key="frame" x="8" y="141" width="286" height="217"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EPC-Yi-gal" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28" width="286" height="44"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EPC-Yi-gal" id="LSO-1h-u1Z">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="43.666666666666664"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </tableViewCellContentView>
-                                                                </tableViewCell>
-                                                            </prototypes>
-                                                        </tableView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="CdU-JA-ei0" secondAttribute="trailing" constant="16" id="8Mc-dv-2CV"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2Uh-4T-IE8" secondAttribute="trailing" constant="16" id="8iN-gx-oYK"/>
-                                                        <constraint firstItem="Aby-iP-onH" firstAttribute="top" secondItem="2Uh-4T-IE8" secondAttribute="bottom" constant="8" id="Ahq-Jz-GpY"/>
-                                                        <constraint firstAttribute="bottom" secondItem="tp2-fl-0uN" secondAttribute="bottom" constant="8" id="FCk-r0-6bV"/>
-                                                        <constraint firstAttribute="trailing" secondItem="aRS-pN-iDu" secondAttribute="trailing" constant="16" id="G1w-4c-fel"/>
-                                                        <constraint firstItem="2Uh-4T-IE8" firstAttribute="leading" secondItem="S6i-dK-rPG" secondAttribute="trailing" id="GVY-AV-PSt"/>
-                                                        <constraint firstItem="ORV-iV-HJ2" firstAttribute="top" secondItem="S6i-dK-rPG" secondAttribute="bottom" constant="8" id="MOk-8l-irC"/>
-                                                        <constraint firstItem="CdU-JA-ei0" firstAttribute="top" secondItem="2Uh-4T-IE8" secondAttribute="bottom" constant="7" id="OFP-l2-xxh"/>
-                                                        <constraint firstItem="ORV-iV-HJ2" firstAttribute="leading" secondItem="GyM-bZ-OtB" secondAttribute="leading" constant="16" id="PmU-OB-89I"/>
-                                                        <constraint firstItem="2Uh-4T-IE8" firstAttribute="top" secondItem="aRS-pN-iDu" secondAttribute="bottom" constant="26" id="RFF-Qm-B7B"/>
-                                                        <constraint firstItem="tp2-fl-0uN" firstAttribute="leading" secondItem="GyM-bZ-OtB" secondAttribute="leading" constant="8" id="Xse-hG-xeX"/>
-                                                        <constraint firstItem="aRS-pN-iDu" firstAttribute="top" secondItem="GyM-bZ-OtB" secondAttribute="top" constant="10" id="cMz-8j-1Nb"/>
-                                                        <constraint firstItem="tp2-fl-0uN" firstAttribute="top" secondItem="ORV-iV-HJ2" secondAttribute="bottom" constant="31" id="iQO-ga-eJG"/>
-                                                        <constraint firstItem="S6i-dK-rPG" firstAttribute="leading" secondItem="GyM-bZ-OtB" secondAttribute="leading" constant="15" id="nMe-0O-ufn"/>
-                                                        <constraint firstItem="S6i-dK-rPG" firstAttribute="top" secondItem="aRS-pN-iDu" secondAttribute="bottom" constant="26" id="oIl-HG-5Ft"/>
-                                                        <constraint firstAttribute="trailing" secondItem="tp2-fl-0uN" secondAttribute="trailing" constant="8" id="qFd-BT-4de"/>
-                                                        <constraint firstItem="CdU-JA-ei0" firstAttribute="leading" secondItem="Aby-iP-onH" secondAttribute="trailing" constant="43" id="qm5-gG-VST"/>
-                                                        <constraint firstItem="aRS-pN-iDu" firstAttribute="leading" secondItem="GyM-bZ-OtB" secondAttribute="leading" constant="16" id="tHV-PX-k60"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="GyM-bZ-OtB" firstAttribute="leading" secondItem="kWL-IY-WUW" secondAttribute="leadingMargin" id="6ww-3O-Kag"/>
-                                            <constraint firstItem="GyM-bZ-OtB" firstAttribute="top" secondItem="kWL-IY-WUW" secondAttribute="top" id="IZK-6A-yHI"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="GyM-bZ-OtB" secondAttribute="bottom" id="azJ-QI-6AO"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="GyM-bZ-OtB" secondAttribute="trailing" id="htZ-pC-1V2"/>
-                                        </constraints>
-                                        <size key="customSize" width="334" height="400"/>
-                                        <connections>
-                                            <outlet property="champName" destination="aRS-pN-iDu" id="CUt-9c-Ifi"/>
-                                            <outlet property="historyTableView" destination="tp2-fl-0uN" id="IST-6T-mvD"/>
-                                            <outlet property="nbrGames" destination="ORV-iV-HJ2" id="ceM-mu-mp5"/>
-                                            <outlet property="profilView" destination="GyM-bZ-OtB" id="1RS-0v-eK5"/>
-                                            <outlet property="victoryNumber" destination="Aby-iP-onH" id="2JT-6b-5Ag"/>
-                                            <outlet property="victoryPercent" destination="CdU-JA-ei0" id="vG8-gR-b7U"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="champ5" id="bGu-jC-qZf" customClass="ProfilDetailCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                        <rect key="frame" x="1376" y="79" width="334" height="400"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="400"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-0n-loS">
-                                                    <rect key="frame" x="16" y="0.0" width="302" height="366"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champ_name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qo-PV-f6f">
-                                                            <rect key="frame" x="16" y="10" width="270" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nombre de parties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3L-Pc-ehk">
-                                                            <rect key="frame" x="15" y="60" width="204" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victoires" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhV-WH-VMC">
-                                                            <rect key="frame" x="219" y="60" width="67" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALg-T5-7hV">
-                                                            <rect key="frame" x="16" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgx-T9-FkW">
-                                                            <rect key="frame" x="182" y="89" width="18" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9C-Sn-SCo">
-                                                            <rect key="frame" x="243" y="88" width="43" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DR3-oo-miO">
-                                                            <rect key="frame" x="8" y="141" width="286" height="217"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ba7-5P-s9S" customClass="HistoryGameTableViewCell" customModule="PetanqueScore" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28" width="286" height="44"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ba7-5P-s9S" id="Ee5-Oo-Dz4">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="286" height="43.666666666666664"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </tableViewCellContentView>
-                                                                </tableViewCell>
-                                                            </prototypes>
-                                                        </tableView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="qgx-T9-FkW" firstAttribute="top" secondItem="YhV-WH-VMC" secondAttribute="bottom" constant="8" id="7aF-vz-jAD"/>
-                                                        <constraint firstItem="DR3-oo-miO" firstAttribute="top" secondItem="ALg-T5-7hV" secondAttribute="bottom" constant="31" id="8Qh-Ch-C5B"/>
-                                                        <constraint firstItem="ALg-T5-7hV" firstAttribute="top" secondItem="H3L-Pc-ehk" secondAttribute="bottom" constant="8" id="CMe-uP-UTT"/>
-                                                        <constraint firstItem="7Qo-PV-f6f" firstAttribute="top" secondItem="gLq-0n-loS" secondAttribute="top" constant="10" id="GVh-cn-z0l"/>
-                                                        <constraint firstItem="H3L-Pc-ehk" firstAttribute="top" secondItem="7Qo-PV-f6f" secondAttribute="bottom" constant="26" id="HcK-Bq-nvc"/>
-                                                        <constraint firstItem="u9C-Sn-SCo" firstAttribute="top" secondItem="YhV-WH-VMC" secondAttribute="bottom" constant="7" id="JBp-Go-TUb"/>
-                                                        <constraint firstItem="ALg-T5-7hV" firstAttribute="leading" secondItem="gLq-0n-loS" secondAttribute="leading" constant="16" id="MJz-dP-1rX"/>
-                                                        <constraint firstItem="YhV-WH-VMC" firstAttribute="leading" secondItem="H3L-Pc-ehk" secondAttribute="trailing" id="Orv-wt-ng9"/>
-                                                        <constraint firstAttribute="trailing" secondItem="7Qo-PV-f6f" secondAttribute="trailing" constant="16" id="Q79-1T-3uj"/>
-                                                        <constraint firstItem="H3L-Pc-ehk" firstAttribute="leading" secondItem="gLq-0n-loS" secondAttribute="leading" constant="15" id="RlF-C2-EBq"/>
-                                                        <constraint firstItem="DR3-oo-miO" firstAttribute="leading" secondItem="gLq-0n-loS" secondAttribute="leading" constant="8" id="UAT-7O-X6w"/>
-                                                        <constraint firstAttribute="trailing" secondItem="YhV-WH-VMC" secondAttribute="trailing" constant="16" id="em4-T4-WAW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="DR3-oo-miO" secondAttribute="trailing" constant="8" id="fjL-No-LiB"/>
-                                                        <constraint firstItem="u9C-Sn-SCo" firstAttribute="leading" secondItem="qgx-T9-FkW" secondAttribute="trailing" constant="43" id="g0i-Td-uoF"/>
-                                                        <constraint firstAttribute="bottom" secondItem="DR3-oo-miO" secondAttribute="bottom" constant="8" id="iC8-lR-oYM"/>
-                                                        <constraint firstItem="7Qo-PV-f6f" firstAttribute="leading" secondItem="gLq-0n-loS" secondAttribute="leading" constant="16" id="ler-7W-nps"/>
-                                                        <constraint firstAttribute="trailing" secondItem="u9C-Sn-SCo" secondAttribute="trailing" constant="16" id="rj5-cH-Epe"/>
-                                                        <constraint firstItem="YhV-WH-VMC" firstAttribute="top" secondItem="7Qo-PV-f6f" secondAttribute="bottom" constant="26" id="u7H-TQ-Kmu"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="gLq-0n-loS" firstAttribute="leading" secondItem="bGu-jC-qZf" secondAttribute="leadingMargin" id="29y-dO-t6Q"/>
-                                            <constraint firstItem="gLq-0n-loS" firstAttribute="top" secondItem="bGu-jC-qZf" secondAttribute="top" id="RlX-da-wrQ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="gLq-0n-loS" secondAttribute="trailing" id="UeB-y2-haU"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="gLq-0n-loS" secondAttribute="bottom" id="dOF-PF-YXt"/>
-                                        </constraints>
-                                        <size key="customSize" width="334" height="400"/>
-                                        <connections>
-                                            <outlet property="champName" destination="7Qo-PV-f6f" id="i1w-GA-Rga"/>
-                                            <outlet property="historyTableView" destination="DR3-oo-miO" id="fPh-qi-xzT"/>
-                                            <outlet property="nbrGames" destination="ALg-T5-7hV" id="NKy-ov-KrA"/>
-                                            <outlet property="profilView" destination="gLq-0n-loS" id="PNc-nN-6RO"/>
-                                            <outlet property="victoryNumber" destination="qgx-T9-FkW" id="BK0-mc-IFn"/>
-                                            <outlet property="victoryPercent" destination="u9C-Sn-SCo" id="jsl-5O-YQa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

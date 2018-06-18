@@ -10,7 +10,7 @@ import UIKit
 
 class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -19,6 +19,28 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ1", for: indexPath) as! ProfilDetailCollectionViewCell
             cell.champName.text = "Championnat"
+            let table = cell.historyTableView.dequeueReusableCell(withIdentifier: "HistoryGameCell") as! HistoryGameTableViewCell
+            if (games.count == 0) {
+                return cell
+            }
+            table.team1Name.text = games[indexPath.row].equipe1Name
+            table.team2Name.text = games[indexPath.row].equipe2Name
+            let score1 = String(games[indexPath.row].equipe1Score!)
+            let score2 = String(games[indexPath.row].equipe2Score!)
+            table.team1Score.text = "\(score1)"
+            table.team2Score.text = "\(score2)"
+            if (games[indexPath.row].equipe1Score! > games[indexPath.row].equipe2Score!)
+            {
+                table.team1Score.textColor = UIColor.green
+                table.team1Name.textColor = UIColor.green
+                table.team2Score.textColor = UIColor.red
+                table.team2Name.textColor = UIColor.red
+            } else {
+                table.team2Score.textColor = UIColor.green
+                table.team2Name.textColor = UIColor.green
+                table.team1Name.textColor = UIColor.red
+                table.team1Score.textColor = UIColor.red
+            }
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ2", for: indexPath) as! ProfilDetailCollectionViewCell
@@ -67,7 +89,12 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         players = NSCodingData.GetProfils()!
-        games = NSCodingData.GetGames()!
+        if let gamesArray = NSCodingData.GetGames() {
+            games = gamesArray
+        } else {
+            games = []
+        }
+        
         let curr = players[idPlayer]
         nameLabel.text = curr.firstname
         let urlImg = curr.imageUrl?.path
