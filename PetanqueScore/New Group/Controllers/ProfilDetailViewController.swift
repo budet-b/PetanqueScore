@@ -9,70 +9,20 @@
 import UIKit
 
 class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(indexPath)
-        switch indexPath.row {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ1", for: indexPath) as! ProfilDetailCollectionViewCell
-            cell.champName.text = "Championnat"
-            let table = cell.historyTableView.dequeueReusableCell(withIdentifier: "HistoryGameCell") as! HistoryGameTableViewCell
-            if (games.count == 0) {
-                return cell
-            }
-            table.team1Name.text = games[indexPath.row].equipe1Name
-            table.team2Name.text = games[indexPath.row].equipe2Name
-            let score1 = String(games[indexPath.row].equipe1Score!)
-            let score2 = String(games[indexPath.row].equipe2Score!)
-            table.team1Score.text = "\(score1)"
-            table.team2Score.text = "\(score2)"
-            if (games[indexPath.row].equipe1Score! > games[indexPath.row].equipe2Score!)
-            {
-                table.team1Score.textColor = UIColor.green
-                table.team1Name.textColor = UIColor.green
-                table.team2Score.textColor = UIColor.red
-                table.team2Name.textColor = UIColor.red
-            } else {
-                table.team2Score.textColor = UIColor.green
-                table.team2Name.textColor = UIColor.green
-                table.team1Name.textColor = UIColor.red
-                table.team1Score.textColor = UIColor.red
-            }
-            return cell
-        case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ2", for: indexPath) as! ProfilDetailCollectionViewCell
-            cell.champName.text = "Concours Officiel"
-            return cell
-        case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ3", for: indexPath) as! ProfilDetailCollectionViewCell
-            cell.champName.text = "Concours Sauvage"
-            return cell
-        case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ4", for: indexPath) as! ProfilDetailCollectionViewCell
-            cell.champName.text = "Partie d'interet"
-            return cell
-        case 4:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ5", for: indexPath) as! ProfilDetailCollectionViewCell
-            cell.champName.text = "Entre amis"
-            return cell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "champ1", for: indexPath) as! ProfilDetailCollectionViewCell
-            return cell
-        }
-    }
     
 
     var idPlayer: Int = 0
     var players: [User] = []
     var games: [Game] = []
+    var gamesChampionnat: [Game] = []
+    var concoursOfficielChampionnat: [Game] = []
+    var concoursSauvageChampionnat: [Game] = []
+    var partieDinteretChampionnat: [Game] = []
+    var entreAmisChampionnat: [Game] = []
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageUser: UIImageView!
     @IBOutlet weak var lastnameLabel: UILabel!
     @IBOutlet weak var gamesCollectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +43,19 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
             games = gamesArray
         } else {
             games = []
+        }
+        for game in games {
+            if (game.competitionType == 0) {
+                gamesChampionnat.append(game)
+            } else if (game.competitionType == 1) {
+                concoursOfficielChampionnat.append(game)
+            } else if (game.competitionType == 2) {
+                concoursSauvageChampionnat.append(game)
+            } else if (game.competitionType == 3) {
+                partieDinteretChampionnat.append(game)
+            } else if (game.competitionType == 4) {
+                entreAmisChampionnat.append(game)
+            }
         }
         
         let curr = players[idPlayer]
@@ -121,6 +84,42 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gamesCVCell", for: indexPath) as! ProfilDetailCollectionViewCell
+        switch indexPath.row {
+        case 0:
+            cell.champName.text = "Championnat"
+            cell.gamesArray = gamesChampionnat
+            cell.nbrGames.text = String(gamesChampionnat.count)
+        case 1:
+            cell.champName.text = "Concours Officiel"
+            cell.gamesArray = concoursOfficielChampionnat
+            cell.nbrGames.text = String(concoursOfficielChampionnat.count)
+        case 2:
+            cell.champName.text = "Concours Sauvage"
+            cell.gamesArray = concoursSauvageChampionnat
+            cell.nbrGames.text = String(concoursSauvageChampionnat.count)
+        case 3:
+            cell.champName.text = "Partie d'interet"
+            print(partieDinteretChampionnat.count)
+            cell.gamesArray = partieDinteretChampionnat
+            cell.nbrGames.text = String(partieDinteretChampionnat.count)
+        case 4:
+            cell.champName.text = "Entre amis"
+            cell.gamesArray = entreAmisChampionnat
+            cell.nbrGames.text = String(entreAmisChampionnat.count)
+        default:
+            cell.champName.text = "Championnat"
+            cell.gamesArray = gamesChampionnat
+            cell.nbrGames.text = String(gamesChampionnat.count)
+        }
+        cell.historyTableView.reloadData()
+        return cell
+    }
     /*
     // MARK: - Navigation
 

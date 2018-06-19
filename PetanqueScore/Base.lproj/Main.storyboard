@@ -1116,7 +1116,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="champ1" id="eUT-Ce-zMF" customClass="ProfilDetailCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gamesCVCell" id="eUT-Ce-zMF" customClass="ProfilDetailCollectionViewCell" customModule="PetanqueScore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="334" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1222,6 +1222,12 @@
                                                                             <constraint firstItem="2wg-r1-wOT" firstAttribute="top" secondItem="NMx-cO-sVl" secondAttribute="top" constant="3" id="zQ1-Df-3ti"/>
                                                                         </constraints>
                                                                     </tableViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="team1Name" destination="PT3-Oq-C4L" id="jS5-Xh-hZW"/>
+                                                                        <outlet property="team1Score" destination="0WY-Vw-HyX" id="nRu-Oe-APa"/>
+                                                                        <outlet property="team2Name" destination="YYh-x8-q6r" id="lgd-KD-3cI"/>
+                                                                        <outlet property="team2Score" destination="SUD-4r-IDh" id="kZV-ne-oUp"/>
+                                                                    </connections>
                                                                 </tableViewCell>
                                                             </prototypes>
                                                         </tableView>
