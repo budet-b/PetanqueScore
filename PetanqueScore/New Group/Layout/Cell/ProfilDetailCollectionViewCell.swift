@@ -26,6 +26,7 @@ class ProfilDetailCollectionViewCell: UICollectionViewCell, UITableViewDataSourc
         super.awakeFromNib()
         historyTableView.delegate = self
         historyTableView.dataSource = self
+        historyTableView.tableFooterView = UIView()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,5 +65,11 @@ class ProfilDetailCollectionViewCell: UICollectionViewCell, UITableViewDataSourc
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "ResumeGame") as! ResumeGameViewController
+         vc.currentGame = gamesArray[indexPath.row]
+        self.window?.rootViewController?.show(vc, sender: nil)
+    }
 }

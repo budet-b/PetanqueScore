@@ -14,6 +14,7 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
 
     var idGame: Int = 0
     var games: [Game] = []
+    var currentGame: Game?
     @IBOutlet weak var equipe1Name: UILabel!
     @IBOutlet weak var score1Name: UILabel!
     @IBOutlet weak var equipe1CollectionView: UICollectionView!
@@ -41,7 +42,7 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
     @IBOutlet weak var deleteGame: UIButton!
     
     @IBAction func deleteGamePressed(_ sender: Any) {
-        games.remove(at: idGame)
+        //games.remove(at: idGame)
         if NSCodingData.SaveGame(games: games)
         {
             self.navigationController?.popToRootViewController(animated: true)
@@ -50,13 +51,15 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let currentGame = games[idGame]
-        equipe1Name.text = currentGame.equipe1Name
-        equipe2Name.text = currentGame.equipe2Name
-        score1Name.text = String(currentGame.equipe1Score!)
-        score2Name.text = String(currentGame.equipe2Score!)
-        if (currentGame.longitude != nil) && (currentGame.latitude != nil) {
-            let center = CLLocationCoordinate2D(latitude: currentGame.latitude!, longitude: currentGame.longitude!)
+        
+        equipe1Name.text = currentGame?.equipe1Name
+        equipe2Name.text = currentGame?.equipe2Name
+        let equipe1Score = currentGame?.equipe1Score
+        let equipe2Score = currentGame?.equipe2Score
+        score1Name.text = String(equipe1Score!)
+        score2Name.text = String(equipe2Score!)
+        if (currentGame?.longitude != nil) && (currentGame?.latitude != nil) {
+            let center = CLLocationCoordinate2D(latitude: (currentGame?.latitude!)!, longitude: (currentGame?.longitude!)!)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
             gameLocation.setRegion(region, animated: true)
         } else {
@@ -68,19 +71,18 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.restorationIdentifier == "equipe1" {
-            return (games[idGame].equipe1?.count)!
+            return (currentGame!.equipe1?.count)!
         } else {
-            return (games[idGame].equipe2?.count)!
+            return (currentGame!.equipe2?.count)!
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let currentGame = games[idGame]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerDetail", for: indexPath) as! GameDetailCollectionViewCell
         if collectionView == equipe1CollectionView && collectionView.restorationIdentifier == "equipe1" {
             do {
-                if ((currentGame.equipe1![indexPath.row].imageUrl) != nil) {
-                    let img = try ImageLoad.loadImage(fileName: (currentGame.equipe1![indexPath.row].imageUrl?.path)!)
+                if ((currentGame?.equipe1![indexPath.row].imageUrl) != nil) {
+                    let img = try ImageLoad.loadImage(fileName: (currentGame?.equipe1![indexPath.row].imageUrl?.path)!)
                     cell.playerImg.image = img
                 } else {
                     cell.playerImg.image = UIImage(named: "profilPlaceholder")
@@ -91,12 +93,12 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
             cell.playerImg.layer.masksToBounds = true
             cell.playerImg.layer.cornerRadius = cell.playerImg.frame.size.width / 2
             cell.playerImg.clipsToBounds = true
-            cell.playerName.text = currentGame.equipe1![indexPath.row].firstname
-            cell.playerLastName.text = currentGame.equipe1![indexPath.row].lastname
+            cell.playerName.text = currentGame?.equipe1![indexPath.row].firstname
+            cell.playerLastName.text = currentGame?.equipe1![indexPath.row].lastname
         } else if collectionView == equipe2CollectionView && collectionView.restorationIdentifier == "equipe2" {
             do {
-                if ((currentGame.equipe2![indexPath.row].imageUrl) != nil) {
-                    let img = try ImageLoad.loadImage(fileName: (currentGame.equipe2![indexPath.row].imageUrl?.path)!)
+                if ((currentGame?.equipe2![indexPath.row].imageUrl) != nil) {
+                    let img = try ImageLoad.loadImage(fileName: (currentGame?.equipe2![indexPath.row].imageUrl?.path)!)
                     cell.playerImg.image = img
                 } else {
                     cell.playerImg.image = UIImage(named: "profilPlaceholder")
@@ -107,8 +109,8 @@ class ResumeGameViewController: UIViewController, CLLocationManagerDelegate,MKMa
             cell.playerImg.layer.masksToBounds = true
             cell.playerImg.layer.cornerRadius = cell.playerImg.frame.size.width / 2
             cell.playerImg.clipsToBounds = true
-            cell.playerName.text = currentGame.equipe2![indexPath.row].firstname
-            cell.playerLastName.text = currentGame.equipe2![indexPath.row].lastname
+            cell.playerName.text = currentGame?.equipe2![indexPath.row].firstname
+            cell.playerLastName.text = currentGame?.equipe2![indexPath.row].lastname
         }
         
         return cell

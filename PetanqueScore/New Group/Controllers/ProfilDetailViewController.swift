@@ -11,8 +11,11 @@ import UIKit
 class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
 
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var deleteButtonOutlet: UIButton!
     var idPlayer: Int = 0
     var players: [User] = []
+    var currentUser: User?
     var games: [Game] = []
     var gamesChampionnat: [Game] = []
     var concoursOfficielChampionnat: [Game] = []
@@ -28,6 +31,10 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
         super.viewDidLoad()
         gamesCollectionView.delegate = self
         gamesCollectionView.dataSource = self
+        
+        deleteButtonOutlet.layer.cornerRadius = 10
+        deleteButtonOutlet.layer.borderWidth = 1
+        
         // Do any additional setup after loading the view.
     }
 
@@ -38,22 +45,43 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        gamesChampionnat = []
+        concoursSauvageChampionnat = []
+        concoursOfficielChampionnat = []
+        entreAmisChampionnat = []
+        partieDinteretChampionnat = []
         players = NSCodingData.GetProfils()!
+        currentUser = players[idPlayer]
         if let gamesArray = NSCodingData.GetGames() {
             games = gamesArray
         } else {
             games = []
         }
+        
         for game in games {
-            if (game.competitionType == 0) {
+            var isEquipe1 = false
+            var isEquipe2 = false
+            for player in game.equipe1! {
+                if player.firstname == currentUser?.firstname && player.lastname == currentUser?.lastname {
+                    isEquipe1 = true
+                }
+            }
+            
+            for player in game.equipe2! {
+                if player.firstname == currentUser?.firstname && player.lastname == currentUser?.lastname {
+                    isEquipe2 = true
+                }
+            }
+            
+            if ((isEquipe1 || isEquipe2) && game.competitionType == 0) {
                 gamesChampionnat.append(game)
-            } else if (game.competitionType == 1) {
+            } else if ((isEquipe1 || isEquipe2) && game.competitionType == 1) {
                 concoursOfficielChampionnat.append(game)
-            } else if (game.competitionType == 2) {
+            } else if ((isEquipe1 || isEquipe2) && game.competitionType == 2) {
                 concoursSauvageChampionnat.append(game)
-            } else if (game.competitionType == 3) {
+            } else if ((isEquipe1 || isEquipe2) && game.competitionType == 3) {
                 partieDinteretChampionnat.append(game)
-            } else if (game.competitionType == 4) {
+            } else if ((isEquipe1 || isEquipe2) && game.competitionType == 4) {
                 entreAmisChampionnat.append(game)
             }
         }
@@ -86,6 +114,10 @@ class ProfilDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
