@@ -35,14 +35,28 @@ class DashboardViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
-    // MARK: - Navigation
+    
+    @IBAction func fjpjpActionClicked(_ sender: Any) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        UIApplication.shared.open(URL(string : "https://www.ffpjp.org/")!, options: [:], completionHandler: nil)
     }
-    */
 
+    @IBAction func cd29ActionClicked(_ sender: Any) {
+            UIApplication.shared.open(URL(string : "http://www.petanque-finistere.fr/")!, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func boulistenauteActionClicked(_ sender: Any) {
+            UIApplication.shared.open(URL(string : "http://www.boulistenaute.com/")!, options: [:], completionHandler: nil)
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

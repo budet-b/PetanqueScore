@@ -211,6 +211,36 @@
                                     <segue destination="bCj-Iq-Ad0" kind="show" id="t8i-QO-mWu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-Yf-tRk">
+                                <rect key="frame" x="16" y="491" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title="CD29">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cd29ActionClicked:" destination="IsD-EU-gz7" eventType="touchUpInside" id="jbH-iO-dpO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01n-fF-ieT">
+                                <rect key="frame" x="16" y="571" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title="Ffpjp">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fjpjpActionClicked:" destination="IsD-EU-gz7" eventType="touchUpInside" id="Vdl-lT-6rP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLD-xE-UtH">
+                                <rect key="frame" x="16" y="654" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <state key="normal" title="Boulistenaute">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="boulistenauteActionClicked:" destination="IsD-EU-gz7" eventType="touchUpInside" id="Hq8-Op-xXd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -219,6 +249,15 @@
                             <constraint firstItem="Yy7-4q-Ar4" firstAttribute="leading" secondItem="Clq-Xc-8Bi" secondAttribute="leading" constant="16" id="APm-JF-10r"/>
                             <constraint firstItem="Clq-Xc-8Bi" firstAttribute="trailing" secondItem="Yy7-4q-Ar4" secondAttribute="trailing" constant="16" id="B8F-TF-Icb"/>
                             <constraint firstItem="E4c-XL-dd4" firstAttribute="top" secondItem="Yy7-4q-Ar4" secondAttribute="bottom" constant="40" id="FQK-Ok-V7P"/>
+                            <constraint firstItem="VLD-xE-UtH" firstAttribute="top" secondItem="01n-fF-ieT" secondAttribute="bottom" constant="49" id="HAn-1I-bUa"/>
+                            <constraint firstItem="Clq-Xc-8Bi" firstAttribute="trailing" secondItem="oQe-Yf-tRk" secondAttribute="trailing" constant="16" id="JSi-BZ-M98"/>
+                            <constraint firstItem="Clq-Xc-8Bi" firstAttribute="trailing" secondItem="01n-fF-ieT" secondAttribute="trailing" constant="16" id="M3Y-dh-K4e"/>
+                            <constraint firstItem="VLD-xE-UtH" firstAttribute="leading" secondItem="Clq-Xc-8Bi" secondAttribute="leading" constant="16" id="RRQ-wz-svh"/>
+                            <constraint firstItem="oQe-Yf-tRk" firstAttribute="leading" secondItem="Clq-Xc-8Bi" secondAttribute="leading" constant="16" id="b4y-D5-VhZ"/>
+                            <constraint firstItem="Clq-Xc-8Bi" firstAttribute="trailing" secondItem="VLD-xE-UtH" secondAttribute="trailing" constant="16" id="b7V-aK-5Ug"/>
+                            <constraint firstItem="01n-fF-ieT" firstAttribute="top" secondItem="oQe-Yf-tRk" secondAttribute="bottom" constant="46" id="qXH-bz-ABX"/>
+                            <constraint firstItem="01n-fF-ieT" firstAttribute="leading" secondItem="Clq-Xc-8Bi" secondAttribute="leading" constant="16" id="y6U-4g-tXp"/>
+                            <constraint firstItem="oQe-Yf-tRk" firstAttribute="top" secondItem="E4c-XL-dd4" secondAttribute="bottom" constant="133" id="yHC-4L-8AG"/>
                             <constraint firstItem="Yy7-4q-Ar4" firstAttribute="top" secondItem="Clq-Xc-8Bi" secondAttribute="top" constant="106" id="z5a-0F-A5h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Clq-Xc-8Bi"/>
