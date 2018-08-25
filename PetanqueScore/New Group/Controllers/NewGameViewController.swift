@@ -33,6 +33,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var equipe1collectionView: UICollectionView!
     @IBOutlet weak var equipe2collectionView: UICollectionView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     var data: [User]?
     var equipe1: [User] = []
     var equipe2: [User] = []
@@ -93,6 +94,7 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
         equipe2collectionView.dataSource = self
         competitionPicker.dataSource = self
         competitionPicker.delegate = self
+        lieuTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -179,6 +181,13 @@ class NewGameViewController: UIViewController, UICollectionViewDataSource, UICol
 }
 
 extension NewGameViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        var point = textField.frame.origin
+        point.y = point.y - 5
+        point.x = point.x + 5
+        self.scrollView.setContentOffset(point, animated: true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

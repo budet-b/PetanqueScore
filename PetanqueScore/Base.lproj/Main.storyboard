@@ -825,6 +825,7 @@
                         <outlet property="equipe2collectionView" destination="pwX-HL-ru6" id="8PK-SS-fkA"/>
                         <outlet property="lieuTextField" destination="YRr-hG-1DY" id="r58-hA-2au"/>
                         <outlet property="limiteScore" destination="zsa-eS-pF7" id="fRA-bv-tPs"/>
+                        <outlet property="scrollView" destination="bCU-oe-beA" id="xZ4-Ny-m9J"/>
                         <outlet property="selectFirstTeam" destination="DPi-ud-lzg" id="x7R-CK-sgI"/>
                         <outlet property="selectSecondTeam" destination="Jcw-bF-fOK" id="s94-f6-JXh"/>
                     </connections>

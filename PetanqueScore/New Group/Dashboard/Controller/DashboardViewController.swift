@@ -45,6 +45,7 @@ class DashboardViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
         wkWebView.navigationDelegate = self
         view.addSubview(wkWebView!)
         let scriptSource = "document.body.innerHTML = `Latitude: \(latit) Longitude \(longit)`;"
+        
         wkWebView.evaluateJavaScript(scriptSource, completionHandler: nil)
     }
     
