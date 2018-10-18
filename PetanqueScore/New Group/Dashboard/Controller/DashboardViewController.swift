@@ -7,14 +7,11 @@
 //
 
 import UIKit
-import JavaScriptCore
-import WebKit
 import CoreLocation
 
-class DashboardViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, CLLocationManagerDelegate {
+class DashboardViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var newGameOutlet: UIButton!
     @IBOutlet weak var profilesButtonOutlet: UIButton!
-    var wkWebView: WKWebView!
     let locationManager = CLLocationManager()
     var longit: Double = 0.0
     var latit: Double = 0.0
@@ -33,20 +30,7 @@ class DashboardViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            if let long = locationManager.location?.coordinate.longitude {
-                longit = long
-            }
-            if let lati = locationManager.location?.coordinate.latitude {
-                latit = lati
-            }
         }
-        wkWebView = WKWebView(frame: CGRect(x: 0, y: self.view.frame.size.height - 50, width: self.view.frame.width, height: 50) , configuration: WKWebViewConfiguration())
-        wkWebView.uiDelegate = self
-        wkWebView.navigationDelegate = self
-        view.addSubview(wkWebView!)
-        let scriptSource = "document.body.innerHTML = `Latitude: \(latit) Longitude \(longit)`;"
-        
-        wkWebView.evaluateJavaScript(scriptSource, completionHandler: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
